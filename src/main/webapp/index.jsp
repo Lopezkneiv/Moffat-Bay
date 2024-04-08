@@ -31,6 +31,7 @@
             background-color: #555;
         }
         
+        
         /* Style for the small boxes */
         .description-box {
             border: 1px solid #ccc;
@@ -43,6 +44,20 @@
             cursor: pointer;
             font-weight: bold;
             text-decoration: underline;
+        }
+        
+        /* Style for the map iframe */
+        #map {
+            width: 100%;
+            height: 400px; 
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        /* Style for the map container */
+        .map-container {
+            float: right;
+            width: 30%;
         }
     </style>
     
@@ -75,7 +90,7 @@
     <main>
         <p>Welcome to Moffat Bay Lodge, your ultimate vacation destination! Explore our beautiful rooms, exciting activities, and plan your dream vacation today.</p>
     
-    	<div style="float: right; width: 30%;">
+    	<div class="description-container">
             <div class="description-box">
                 <span class="description-heading" onclick="toggleDescription('relaxation')">Relaxation</span>
                 <p id="relaxation" style="display: none;">Unwind and rejuvenate in our serene spa, enjoy a peaceful stroll along the beach, or simply lounge by the pool and soak up the sun.</p>
@@ -88,6 +103,11 @@
                 <span class="description-heading" onclick="toggleDescription('adventure')">Adventure</span>
                 <p id="adventure" style="display: none;">Embark on thrilling adventures such as hiking through lush trails, kayaking in crystal-clear waters, and exploring the wonders of nature.</p>
             </div>
+        </div>
+        
+        
+        <div class="map-container">
+            <iframe id="map" src="https://www.google.com/maps/d/embed?mid=15GNSJbNvfh7sRB6hfM5LrfpnJ-I&hl=en_US&ehbc=2E312F" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
         </div>
         
     </main>
