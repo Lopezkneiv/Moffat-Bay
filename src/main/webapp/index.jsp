@@ -9,6 +9,7 @@
 <head>
 <title>Moffat-Bay Lodge</title>
     <style>
+    	/* TODO - Move to Style Sheet */
         /* Style for the navigation menu */
         nav ul {
             list-style-type: none;
@@ -39,12 +40,13 @@
             border: none;
             border-radius: 5px;
             cursor: pointer;
+            display: block;
         }
         /* Style for the description container */
         .description-container {
-            float: left;
             width: 50%;
             padding-right: 20px;
+            display: inline-block;
         }
         /* Style for the description box */
         .description-box {
