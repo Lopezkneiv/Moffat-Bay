@@ -2,35 +2,13 @@
 <%-- Created On: 04/07/2024 --%>
 <%-- Description: JSP Landing page for Moffat-Bay Lodge site. --%>
 
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@page trimDirectiveWhitespaces="true"%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ include file="Header.jsp" %>
 <html>
 <head>
 <title>Moffat-Bay Lodge</title>
     <style>
     	/* TODO - Move to Style Sheet */
-        /* Style for the navigation menu */
-        nav ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-            background-color: #333;
-        }
-        nav ul li {
-            float: left;
-        }
-        nav ul li a {
-            display: block;
-            color: white;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-        }
-        nav ul li a:hover {
-            background-color: #555;
-        }
         /* Style for the description button */
         .description-button {
             margin-bottom: 5px;
@@ -83,15 +61,6 @@
 </head>
 <body>
     <header>
-    
-	    <nav>
-	        <ul>
-	            <li><a href="landing.jsp">Home</a></li>
-	            <li><a href="reservations.jsp">Reservations</a></li>
-	            <li><a href="activities.jsp">Activities</a></li>
-	            <li><a href="contact.jsp">Contact Us</a></li>
-	        </ul>
-	    </nav>
         <h1>Welcome to Moffat Bay Lodge</h1>
         <p>Your ultimate vacation destination!</p>
     </header>
