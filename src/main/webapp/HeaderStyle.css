@@ -1,0 +1,31 @@
+header nav {
+    background-color: #9AFEFF; 
+    padding: 10px 0; /* Add some padding for vertical spacing */
+}
+
+.navigation {
+    list-style-type: none;
+    padding: 0;
+    margin: 0 auto; /* Center the navigation menu */
+    display: flex;
+    justify-content: left; /* items horizontally */
+}
+
+.navigation li {
+    display: inline-block;
+    margin-right: 20px; /* Add some space between the navigation items */
+}
+
+.navigation li:last-child {
+    margin-right: 0; /* Remove margin for the last item */
+}
+
+.navigation li a {
+    color: #003366; 
+    text-decoration: none;
+    font-size: 16px; /* Adjust the font size as needed */
+}
+
+.navigation li a:hover {
+    text-decoration: underline; 
+}

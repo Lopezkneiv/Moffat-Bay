@@ -1,0 +1,73 @@
+body {
+    background-color: #9AFEFF; /* Set the background color for the entire page */
+    font-family: Arial, sans-serif; /* Set a font for the entire page */
+    margin: 0; /* Reset default margin */
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center elements horizontally */
+}
+
+header {
+    width: 100%; /* Ensure the header spans the full width */
+    background-color: #9AFEFF; 
+    color: white; /* White text color for contrast */
+    padding: 10px 0; /* Add some padding for vertical spacing */
+    text-align: center; /* Center the text/links in the header */
+}
+
+.container {
+    width: 350px; /* Adjust the width as needed */
+    background-color: #fff; /* White background for the container */
+    padding: 20px;
+    margin-top: 20px; /* Add some space between the header and the container */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Simple shadow for depth */
+    border-radius: 5px; /* Optional: rounded corners */
+}
+
+input[type="email"], input[type="password"], input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd; /* Light grey border */
+    box-sizing: border-box; /* Include padding and border in element's total width */
+}
+
+input[type="submit"] {
+    background-color: #4CAF50; 
+    color: white;
+    cursor: pointer;
+    border: none; /* Remove border */
+}
+
+.forgot-password, .remember-me, .alternative-login, .register-link {
+    text-align: center;
+    margin-top: 10px; /* Add space above these sections */
+}
+
+.alternative-login button {
+    width: calc(50% - 10px); /* Half width minus margin */
+    margin: 5px; /* Space between buttons */
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.alternative-login button:first-child {
+    background-color: #3b5998; /* Facebook blue */
+    color: white;
+}
+
+.alternative-login button:last-child {
+    background-color: #db4437; /* Google red */
+    color: white;
+}
+
+.forgot-password a, .register-link a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.container h2, .container hr, .container .forgot-password, .container .remember-me, .container .alternative-login, .container .register-link {
+    margin-bottom: 15px; /* Spacing between elements */
+}
+

@@ -1,0 +1,42 @@
+
+body {
+    background-color: #9AFEFF; /* Set the background color for the entire page */
+    font-family: Arial, sans-serif; /* Optional: Set a font for the entire page */
+}
+
+.container {
+    width: 300px;
+    margin: 100px auto; /* Increased the top and bottom margin to center the box vertically */
+    text-align: center;
+    border: 1px solid #ddd;
+    padding: 20px;
+    box-shadow: 0 0 10px #ccc;
+    background-color: #ffffff; /* Set the background color for the box to white */
+}
+
+h2 {
+    font-family: 'Dancing Script', cursive; 
+   
+}
+
+input[type="text"], input[type="password"], input[type="email"], input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    box-sizing: border-box; /* Include padding and border in the element's total width */
+}
+
+input[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+a {
+    display: block;
+    margin-top: 20px;
+    color: #007bff; /* Style the link color to match the submit button */
+    text-decoration: none;
+}
+
