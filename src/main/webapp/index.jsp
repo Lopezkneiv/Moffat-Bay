@@ -31,11 +31,25 @@
 <body>
     <header>
         <h1>Welcome to Moffat Bay Lodge</h1>
-        <p>Your ultimate vacation destination!</p>
     </header>
 
 
-    <main>
+	 <main>
+	 
+	    <div class="container">
+	        <div class="lodge-description">
+	            <h2>Moffat Bay Lodge</h2>
+	            <p>Welcome to Moffat Bay Lodge, your ultimate vacation destination! Nestled in the heart of nature, our lodge offers a serene escape from the hustle and bustle of everyday life. Whether you're seeking relaxation, family fun, or adventure, we have something for everyone.</p>
+	        </div>
+	        <div class="pictures-container">
+	            <div class="picture">
+	                <img src="path_to_image1.jpg" alt="Image 1">
+	            </div>
+	            <div class="picture">
+	                <img src="path_to_image2.jpg" alt="Image 2">
+	            </div>
+	        </div>
+        </div>
 	    <div class="container">
         <div class="buttons-container">
             <button class="description-button" onclick="showDescription('relaxation')">Relaxation</button>
@@ -53,10 +67,11 @@
                 <p>Embark on thrilling adventures such as hiking through lush trails, kayaking in crystal-clear waters, and exploring the wonders of nature.</p>
             </div>
         </div>
-        <div class="map-container">
-            <iframe id="map" src="https://www.google.com/maps/d/embed?mid=15GNSJbNvfh7sRB6hfM5LrfpnJ-I&hl=en_US&ehbc=2E312F" style="border:0;" aria-hidden="false" tabindex="0"></iframe>
-        </div>
+		<div class="map-container">
+    		<iframe id="map" src="https://www.google.com/maps/d/embed?mid=15GNSJbNvfh7sRB6hfM5LrfpnJ-I&hl=en_US&ehbc=2E312F" style="width: 100%; height: 350px; border: 1px solid #ccc;" aria-hidden="false" tabindex="0"></iframe>
+		</div>
     </main>
+
 
     <footer>
         <p>&copy; 2024 Moffat Bay Lodge. All rights reserved.</p>

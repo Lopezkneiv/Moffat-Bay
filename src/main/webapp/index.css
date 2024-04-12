@@ -9,34 +9,68 @@ body {
 
 /* Style for the parent container */
 .container {
-    border: 1px solid #ccc;
-    border-radius: 5px;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    width: 100%; /* Set width to ensure full width */
+}
+
+.lodge-description {
+	width: 60%;
+    margin-bottom: 20px;
+}
+
+.pictures-container {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.picture {
+    flex: 1;
+    margin-right: 10px;
+}
+
+.picture img {
+    width: 100%;
+    height: auto;
 }
 
 /* Style for the buttons container */
 .buttons-container {
+    width: 70%;
     display: flex;
     flex-direction: column;
-    width: 20%; /* Adjust as needed */
 }
 
 /* Style for the description container */
 .description-container {
-    width: 50%; /* Adjust as needed */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right:10px;
 }
 
 /* Style for the description box */
 .description-box {
+    border: 1px solid #ccc;
+    border-radius: 5px;
     padding: 10px;
-    margin-bottom: 10px;
     display: none;
+}
+
+/* Style for the description button */
+.description-button {
+    margin-bottom: 5px;
+    padding: 5px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
 }
 
 /* Style for the map container */
 .map-container {
-    width: 30%; /* Adjust as needed */
+    width: 70%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
