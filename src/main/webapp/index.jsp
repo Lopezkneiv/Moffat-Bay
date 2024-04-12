@@ -6,57 +6,26 @@
 <%@ include file="Header.jsp" %>
 <html>
 <head>
-<title>Moffat-Bay Lodge</title>
-    <style>
-    	/* TODO - Move to Style Sheet */
-        /* Style for the description button */
-        .description-button {
-            margin-bottom: 5px;
-            padding: 5px;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            display: block;
-        }
-        /* Style for the description container */
-        .description-container {
-            width: 50%;
-            padding-right: 20px;
-            display: inline-block;
-        }
-        /* Style for the description box */
-        .description-box {
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            padding: 10px;
-            display: none; /* Initially hide all descriptions */
-        }
-        /* Style for the map iframe */
-        #map {
-            width: 100%;
-            height: 400px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            margin-top: 20px;
-        }
-        /* Style for the map container */
-        .map-container {
-            float: right;
-            width: 30%;
-        }
-    </style>
+	<title>Moffat-Bay Lodge</title>
+    <link rel="stylesheet" type="text/css" href="index.css">
     <script>
-        // JavaScript function to display the selected description and hide others
-        function showDescription(id) {
-            var descriptions = document.querySelectorAll('.description-box');
-            for (var i = 0; i < descriptions.length; i++) {
-                descriptions[i].style.display = 'none'; // Hide all descriptions
-            }
-            var selectedDescription = document.getElementById(id);
-            selectedDescription.style.display = 'block'; // Display selected description
+ 	// JavaScript function to display the selected description and hide others
+    function showDescription(id) {
+        var descriptions = document.querySelectorAll('.description-box');
+        for (var i = 0; i < descriptions.length; i++) {
+            descriptions[i].style.display = 'none'; // Hide all descriptions
         }
+        var selectedDescription = document.getElementById(id);
+        selectedDescription.style.display = 'block'; // Display selected description
+    }
+
+    // JavaScript function to hide all descriptions except for the default one on page load
+    window.onload = function() {
+        var descriptions = document.querySelectorAll('.description-box');
+        for (var i = 1; i < descriptions.length; i++) { // Start from index 1 to skip the first one (default)
+            descriptions[i].style.display = 'none'; // Hide all descriptions except for the default one
+        }
+    };
     </script>
 </head>
 <body>
@@ -67,13 +36,13 @@
 
 
     <main>
-        <div class="description-container">
+	    <div class="container">
+        <div class="buttons-container">
             <button class="description-button" onclick="showDescription('relaxation')">Relaxation</button>
-            
             <button class="description-button" onclick="showDescription('family-friendly')">Family Friendly</button>
-            
             <button class="description-button" onclick="showDescription('adventure')">Adventure</button>
-            
+        </div>
+        <div class="description-container">
             <div id="relaxation" class="description-box" style="display: block;">
                 <p>Unwind and rejuvenate in our serene spa, enjoy a peaceful stroll along the beach, or simply lounge by the pool and soak up the sun.</p>
             </div>
@@ -85,7 +54,7 @@
             </div>
         </div>
         <div class="map-container">
-            <iframe id="map" src="https://www.google.com/maps/d/embed?mid=15GNSJbNvfh7sRB6hfM5LrfpnJ-I&hl=en_US&ehbc=2E312F" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+            <iframe id="map" src="https://www.google.com/maps/d/embed?mid=15GNSJbNvfh7sRB6hfM5LrfpnJ-I&hl=en_US&ehbc=2E312F" style="border:0;" aria-hidden="false" tabindex="0"></iframe>
         </div>
     </main>
 
