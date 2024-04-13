@@ -30,7 +30,11 @@
 </head>
 <body>
     <header>
-        <h1>Welcome to Moffat Bay Lodge</h1>
+        <h1>Welcome to Moffat Bay Lodge
+            <div class="Logo">
+                <img src="pictures/SalishSalmon.png" alt="Logo_Salmon">
+            </div>
+        </h1>
     </header>
 
 
@@ -43,10 +47,10 @@
 	        </div>
 	        <div class="pictures-container">
 	            <div class="picture">
-	                <img src="path_to_image1.jpg" alt="Image 1">
+	                <img src='pictures/Lodge.jpg' alt="Lodge">
 	            </div>
 	            <div class="picture">
-	                <img src="path_to_image2.jpg" alt="Image 2">
+	                <img src="pictures/Pool_Lodge.jpg" alt="Pool_Lodge">
 	            </div>
 	        </div>
         </div>

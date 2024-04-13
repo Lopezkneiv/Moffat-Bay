@@ -19,6 +19,9 @@ body {
     margin-bottom: 20px;
 }
 
+.Logo {
+    align-items: flex-start;
+}
 .pictures-container {
     display: flex;
     margin-bottom: 20px;
