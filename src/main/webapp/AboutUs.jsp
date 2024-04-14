@@ -93,9 +93,9 @@
             <div class="team-member">
                 <img src="pictures/FrontDesk.jpg" alt="Profile Picture">
                 <p><b>Ziggy Zephyrblitz</b></p>
-                <p><b>Position:</b> Front Desk Receptionist</p>
+                <p><b>Position:</b> Front Desk Supervisor</p>
                 <p>
-                Meet Ziggy Zephyrblitz, our friendly Front Desk Receptionist who warmly welcomes guests to Moffat Bay Lodge. With a 
+                Meet Ziggy Zephyrblitz, our friendly Front Desk Supervisor who warmly welcomes guests to Moffat Bay Lodge. With a 
                 welcoming smile and impeccable customer service skills, Ziggy Zephyrblitz ensures that your check-in process is 
                 smooth and hassle-free. Whether you have questions about local attractions or need assistance during 
                 your stay, Ziggy Zephyrblitz is always ready to assist with a genuine commitment to making your visit unforgettable.
