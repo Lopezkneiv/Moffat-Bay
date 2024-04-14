@@ -55,24 +55,25 @@
 	        </div>
         </div>
 	    <div class="container">
-        <div class="buttons-container">
-            <button class="description-button" onclick="showDescription('relaxation')">Relaxation</button>
-            <button class="description-button" onclick="showDescription('family-friendly')">Family Friendly</button>
-            <button class="description-button" onclick="showDescription('adventure')">Adventure</button>
-        </div>
-        <div class="description-container">
-            <div id="relaxation" class="description-box" style="display: block;">
-                <p>Unwind and rejuvenate in our serene spa, enjoy a peaceful stroll along the beach, or simply lounge by the pool and soak up the sun.</p>
-            </div>
-            <div id="family-friendly" class="description-box">
-                <p>Create unforgettable family memories with our range of kid-friendly activities, spacious accommodations, and warm hospitality.</p>
-            </div>
-            <div id="adventure" class="description-box">
-                <p>Embark on thrilling adventures such as hiking through lush trails, kayaking in crystal-clear waters, and exploring the wonders of nature.</p>
-            </div>
-        </div>
-		<div class="map-container">
-    		<iframe id="map" src="https://www.google.com/maps/d/embed?mid=15GNSJbNvfh7sRB6hfM5LrfpnJ-I&hl=en_US&ehbc=2E312F" style="width: 100%; height: 350px; border: 1px solid #ccc;" aria-hidden="false" tabindex="0"></iframe>
+	        <div class="buttons-container">
+	            <button class="description-button" onclick="showDescription('relaxation')">Relaxation</button>
+	            <button class="description-button" onclick="showDescription('family-friendly')">Family Friendly</button>
+	            <button class="description-button" onclick="showDescription('adventure')">Adventure</button>
+	        </div>
+	        <div class="description-container">
+	            <div id="relaxation" class="description-box" style="display: block;">
+	                <p>Unwind and rejuvenate in our serene spa, enjoy a peaceful stroll along the beach, or simply lounge by the pool and soak up the sun.</p>
+	            </div>
+	            <div id="family-friendly" class="description-box">
+	                <p>Create unforgettable family memories with our range of kid-friendly activities, spacious accommodations, and warm hospitality.</p>
+	            </div>
+	            <div id="adventure" class="description-box">
+	                <p>Embark on thrilling adventures such as hiking through lush trails, kayaking in crystal-clear waters, and exploring the wonders of nature.</p>
+	            </div>
+	        </div>
+			<div class="map-container">
+	    		<iframe id="map" src="https://www.google.com/maps/d/embed?mid=15GNSJbNvfh7sRB6hfM5LrfpnJ-I&hl=en_US&ehbc=2E312F" style="width: 100%; height: 350px; border: 1px solid #ccc;" aria-hidden="false" tabindex="0"></iframe>
+			</div>
 		</div>
     </main>
 
