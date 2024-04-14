@@ -1,0 +1,58 @@
+body {
+    background-color: #9AFEFF; /* Set the background color for the entire page */
+    font-family: Arial, sans-serif; /* Set a font for the entire page */
+    margin: 0; /* Reset default margin */
+    padding: 0 90px;
+}
+
+header {
+    width: 100%; /* Ensure the header spans the full width */
+    background-color: #9AFEFF; 
+    color: white; /* White text color for contrast */
+    padding: 10px 0; /* Add some padding for vertical spacing */
+    text-align: center; /* Center the text/links in the header */
+}
+
+.about-section {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.about-icon {
+    margin-right: 20px;
+}
+
+.about-description {
+    flex: 1;
+}
+
+.team-section {
+    text-align: center;
+}
+
+.team-members {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.team-member {
+    margin: 0 10px;
+}
+
+/* Style for team member profile pictures */
+.team-member img {
+    width: 325px; /* Set a specific width */
+    height: auto; /* Set a specific height */
+}
+
+
+.social-icons {
+    margin-top: 20px;
+}
+
+.social-icons img {
+    width: 30px; /* Adjust icon size as needed */
+    margin: 0 5px;
+}
