@@ -8,8 +8,8 @@
 <body>
     <div class="about-section">
         <div class="about-icon">
-            <!-- Include your about us icon image here -->
-            <img src="about_us_icon.png" alt="About Us Icon">
+            <!-- Icon taken from https://www.flaticon.com/free-icons/about-us -->
+            <img src="pictures/aboutUsIcon.png" alt="About Us Icon">
         </div>
         <div class="about-description">
             <h2>About Us</h2>
@@ -49,9 +49,9 @@
                 </p>
                 <div class="social-icons">
                     <!-- Include your social media icons here as links -->
-                    <a href="#"><img src="facebook_icon.png" alt="Facebook Icon"></a>
-                    <a href="#"><img src="google_icon.png" alt="Google Icon"></a>
-                    <a href="#"><img src="twitter_icon.png" alt="Twitter Icon"></a>
+                    <a href="#"><img src="pictures/facebook-icon.png" alt="Facebook Icon"></a>
+                    <a href="#"><img src="pictures/google-icon.png" alt="Google Icon"></a>
+                    <a href="#"><img src="pictures/x-social-icon.png" alt="Twitter Icon"></a>
                 </div>
             </div>
             <div class="team-member">
@@ -66,9 +66,9 @@
                 </p>
                 <div class="social-icons">
                     <!-- Include your social media icons here as links -->
-                    <a href="#"><img src="facebook_icon.png" alt="Facebook Icon"></a>
-                    <a href="#"><img src="google_icon.png" alt="Google Icon"></a>
-                    <a href="#"><img src="twitter_icon.png" alt="Twitter Icon"></a>
+                    <a href="#"><img src="pictures/facebook-icon.png" alt="Facebook Icon"></a>
+                    <a href="#"><img src="pictures/google-icon.png" alt="Google Icon"></a>
+                    <a href="#"><img src="pictures/x-social-icon.png" alt="Twitter Icon"></a>
                 </div>
             </div>
             <div class="team-member">
@@ -84,9 +84,9 @@
                 </p>
                 <div class="social-icons">
                     <!-- Include your social media icons here as links -->
-                    <a href="#"><img src="facebook_icon.png" alt="Facebook Icon"></a>
-                    <a href="#"><img src="google_icon.png" alt="Google Icon"></a>
-                    <a href="#"><img src="twitter_icon.png" alt="Twitter Icon"></a>
+                    <a href="#"><img src="pictures/facebook-icon.png" alt="Facebook Icon"></a>
+                    <a href="#"><img src="pictures/google-icon.png" alt="Google Icon"></a>
+                    <a href="#"><img src="pictures/x-social-icon.png" alt="Twitter Icon"></a>
                 </div>
             </div>
             <div class="team-member">
@@ -101,9 +101,9 @@
                 </p>
                 <div class="social-icons">
                     <!-- Include your social media icons here as links -->
-                    <a href="#"><img src="facebook_icon.png" alt="Facebook Icon"></a>
-                    <a href="#"><img src="google_icon.png" alt="Google Icon"></a>
-                    <a href="#"><img src="twitter_icon.png" alt="Twitter Icon"></a>
+                    <a href="#"><img src="pictures/facebook-icon.png" alt="Facebook Icon"></a>
+                    <a href="#"><img src="pictures/google-icon.png" alt="Google Icon"></a>
+                    <a href="#"><img src="pictures/x-social-icon.png" alt="Twitter Icon"></a>
                 </div>
             </div>
         </div>
