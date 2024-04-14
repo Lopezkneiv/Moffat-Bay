@@ -12,6 +12,7 @@
             <img src="pictures/aboutUsIcon.png" alt="About Us Icon">
         </div>
         <div class="about-description">
+        	<h1>Moffat Bay Lodge</h1>
             <h2>About Us</h2>
             <p>Welcome to Moffat Bay Lodge, your premier vacation destination nestled in the picturesque landscapes of 
             Moffat Bay. At Moffat Bay Lodge, we believe in providing our guests with an unforgettable experience that combines 
@@ -38,13 +39,13 @@
         <div class="team-members">
             <div class="team-member">
                 <img src="pictures/Manager.jpg" alt="Profile Picture">
-                <p>Name1</p>
-                <p>Position: Manager</p>
+                <p><b>Bixby Bumblethorn</b></p>
+                <p><b>Position:</b> Manager</p>
                 <p>
-                Meet Name1, our dedicated Manager who oversees the day-to-day operations of Moffat Bay Lodge. 
-                With years of experience in the hospitality industry, Name1 brings a wealth of knowledge and 
+                Meet Bixby Bumblethorn, our dedicated Manager who oversees the day-to-day operations of Moffat Bay Lodge. 
+                With years of experience in the hospitality industry, Bixby Bumblethorn brings a wealth of knowledge and 
                 expertise to ensure that every aspect of your stay is seamless and enjoyable. Passionate about 
-                delivering exceptional service, Name1 is committed to making your experience at Moffat Bay Lodge 
+                delivering exceptional service, Bixby Bumblethorn is committed to making your experience at Moffat Bay Lodge 
                 truly memorable.
                 </p>
                 <div class="social-icons">
@@ -56,13 +57,13 @@
             </div>
             <div class="team-member">
                 <img src="pictures/Chef.jpg" alt="Profile Picture">
-                <p>Name2</p>
-                <p>Position: Chef</p>
+                <p><b>Isadora Flambeaux</b></p>
+                <p><b>Position:</b> Chef</p>
                 <p>
-                Introducing Name2, our talented Chef who delights guests with his culinary creations at Moffat Bay Lodge. 
-                With a passion for cooking and a flair for creativity, Name2 crafts mouthwatering dishes using the finest 
+                Introducing Isadora Flambeaux, our talented Chef who delights guests with his culinary creations at Moffat Bay Lodge. 
+                With a passion for cooking and a flair for creativity, Isadora Flambeaux crafts mouthwatering dishes using the finest 
                 locally sourced ingredients. Whether you're indulging in a gourmet meal at our restaurant or savoring a 
-                picnic lunch amidst nature, Name2's culinary expertise promises a gastronomic journey like no other.
+                picnic lunch amidst nature, Isadora Flambeaux's culinary expertise promises a gastronomic journey like no other.
                 </p>
                 <div class="social-icons">
                     <!-- Include your social media icons here as links -->
@@ -73,13 +74,13 @@
             </div>
             <div class="team-member">
                 <img src="pictures/ActivityCord.jpg" alt="Profile Picture">
-                <p>Name3</p>
-                <p>Position: Activities Coordinator</p>
+                <p><b>Penelope Starling</b></p>
+                <p><b>Position:</b> Activities Coordinator</p>
                 <p>
-                Say hello to Name3, our energetic Activities Coordinator who curates exciting adventures for guests at 
-                Moffat Bay Lodge. With a love for the outdoors and a knack for organizing thrilling experiences, Name3 
+                Say hello to Penelope Starling, our energetic Activities Coordinator who curates exciting adventures for guests at 
+                Moffat Bay Lodge. With a love for the outdoors and a knack for organizing thrilling experiences, Penelope Starling 
                 ensures that your stay is filled with unforgettable moments. From guided hikes and kayaking excursions 
-                to wildlife encounters and stargazing nights, Name3's passion for adventure will ignite your sense of 
+                to wildlife encounters and stargazing nights, Penelope Starling's passion for adventure will ignite your sense of 
                 exploration.
                 </p>
                 <div class="social-icons">
@@ -91,13 +92,13 @@
             </div>
             <div class="team-member">
                 <img src="pictures/FrontDesk.jpg" alt="Profile Picture">
-                <p>Name4</p>
-                <p>Position: Front Desk Receptionist</p>
+                <p><b>Ziggy Zephyrblitz</b></p>
+                <p><b>Position:</b> Front Desk Receptionist</p>
                 <p>
-                Meet Name4, our friendly Front Desk Receptionist who warmly welcomes guests to Moffat Bay Lodge. With a 
-                welcoming smile and impeccable customer service skills, Name4 ensures that your check-in process is 
+                Meet Ziggy Zephyrblitz, our friendly Front Desk Receptionist who warmly welcomes guests to Moffat Bay Lodge. With a 
+                welcoming smile and impeccable customer service skills, Ziggy Zephyrblitz ensures that your check-in process is 
                 smooth and hassle-free. Whether you have questions about local attractions or need assistance during 
-                your stay, Name4 is always ready to assist with a genuine commitment to making your visit unforgettable.
+                your stay, Ziggy Zephyrblitz is always ready to assist with a genuine commitment to making your visit unforgettable.
                 </p>
                 <div class="social-icons">
                     <!-- Include your social media icons here as links -->
@@ -108,5 +109,30 @@
             </div>
         </div>
     </div>
+    
+    <div class="contact-section">
+	    <h2>Contact Us</h2>
+	    <form action="ContactServlet" method="post">
+	        <div class="form-group">
+	            <label for="name">Name:</label>
+	            <input type="text" id="name" name="name" required>
+	        </div>
+	        <div class="form-group">
+	            <label for="phone">Phone Number:</label>
+	            <input type="text" id="phone" name="phone">
+	        </div>
+	        <div class="form-group">
+	            <label for="email">Email:</label>
+	            <input type="email" id="email" name="email" required>
+	        </div>
+	        <div class="form-group">
+	            <label for="message">What would you like to discuss?</label>
+	            <textarea id="message" name="message" rows="4" required></textarea>
+	        </div>
+	        <div class="form-group">
+	            <button type="submit">Submit</button>
+	        </div>
+	    </form>
+	</div>
 </body>
 </html>

@@ -62,3 +62,40 @@ header {
     width: 30px; /* Adjust icon size as needed */
     margin: 0 5px;
 }
+
+/*Contact us style*/
+.contact-section {
+    text-align: center;
+    margin-top: 50px;
+    max-width: 500px; /* Set maximum width for the form */
+    margin: 0 auto; /* Center the form horizontally */
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left; /* Align form elements to the left */
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; /* Ensure padding is included in width */
+}
+
+button[type="submit"] {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
