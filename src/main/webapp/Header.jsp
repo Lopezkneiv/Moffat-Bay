@@ -12,7 +12,7 @@
         <ul class="navigation">
             <li><a href="Reservation.jsp">Reservation</a></li>
             <li><a href="Login.jsp">Login</a></li>
-            <li><a href="Index.jsp">Home</a></li>
+            <li><a href="index.jsp">Home</a></li>
             <li><a href="AboutUs.jsp">About Us</a></li>
             <li><a href="Pricing.jsp">Pricing</a></li>
             <li><a href="Blog.jsp">Blog</a></li>

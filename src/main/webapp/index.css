@@ -1,0 +1,101 @@
+body {
+    background-color: #9AFEFF; /* Set the background color for the entire page */
+    font-family: Arial, sans-serif; /* Set a font for the entire page */
+    margin: 0; /* Reset default margin */
+    padding: 0 90px;
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center elements horizontally */
+}
+
+/* Style for the parent container */
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.lodge-description {
+    width: 60%;
+    margin-bottom: 20px;
+    align-self: flex-start; /* Align to the top */
+}
+
+/* Style for the logo container */
+.Logo {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    margin-bottom: 20px; /* Add some space below the logo */
+}
+
+/* Style for the logo image */
+.Logo img {
+    width: 100px; /* Set a specific width */
+    height: auto; /* Let the height adjust proportionally */
+}
+
+.pictures-container {
+    display: flex;
+    margin-bottom: 20px;
+    align-self: flex-start; /* Align to the top */
+}
+
+/* Style for the picture container */
+.picture {
+    flex: 1;
+    margin-right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px; /* rounded edges */
+    overflow: hidden; /* Ensure the rounded edges are visible */
+}
+
+/* Style for the image inside the container */
+.picture img {
+    width: 325px; /* Set a specific width */
+    height: 275px; /* Set a specific height */
+}
+
+
+/* Style for the buttons container */
+.buttons-container {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    margin: 10px
+}
+
+/* Style for the description container */
+.description-container {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right:10px;
+}
+
+/* Style for the description box */
+.description-box {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    display: none;
+}
+
+/* Style for the description button */
+.description-button {
+    margin-bottom: 5px;
+    padding: 5px;
+    background-color: #ccc;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+
+/* Style for the map container */
+.map-container {
+    width: 90%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
