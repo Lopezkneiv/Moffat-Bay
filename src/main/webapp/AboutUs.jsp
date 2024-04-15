@@ -112,7 +112,7 @@
     
     <div class="contact-section">
 	    <h2>Contact Us</h2>
-	    <form action="ContactServlet" method="post">
+	    <form action="ContactUsServlet" method="post">
 	        <div class="form-group">
 	            <label for="name">Name:</label>
 	            <input type="text" id="name" name="name" required>
