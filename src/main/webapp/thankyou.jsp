@@ -1,4 +1,9 @@
+<%-- Created By: Keith Olsen --%>
+<%-- Created On: 04/15/2024 --%>
+<%-- Description: JSP Thank you page for ContactUsServlet. --%>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ include file="Header.jsp" %>
 
 <html>
 <head>

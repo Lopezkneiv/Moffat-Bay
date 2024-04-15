@@ -1,3 +1,7 @@
+/*Created By: Keith Olsen
+ * Created On: 04/15/2024
+ * Description: Servlet to handle emailing the contact us information.
+*/
 package Connector;
 
 
@@ -22,7 +26,7 @@ public class ContactUsServlet extends HttpServlet {
         String message = request.getParameter("message");
 
         // Send email
-        String to = "YourTestEmail@somemail.com"; //Replace with your email for testing.
+        String to = "YOUREMAIL@YOURMAIL.com"; //Replace with your email for testing.
         String subject = "Contact Us Form Submission";
         String body = "Name: " + name + "\n";
         body += "Phone Number: " + phone + "\n";
@@ -47,14 +51,14 @@ public class ContactUsServlet extends HttpServlet {
         // Create session
         Session session = Session.getDefaultInstance(properties, new Authenticator() {
             protected PasswordAuthentication getPasswordAuthentication() {
-                return new PasswordAuthentication("YourTestEmail@somemail.com", "YOUREMAILPASSWORD");
+                return new PasswordAuthentication("YOUREMAIL@YOURMAIL.com", "YOURPASSWORD"); //RESET to "YOUREMAIL@YOURMAIL.com", "YOURPASSWORD" before commiting in git.
                 /*
                  * For gmail generate an app-specific password for this Java application. This is more secure than using your regular Google account password.
 				 * Go to your Google account settings: https://myaccount.google.com/
 				 * Navigate to the "Security" tab.
 				 * Scroll down to the "Signing in to Google" section and click on "App passwords".
                  * Generate a new app password for this Java application. This password is specific to this application and can be used instead of your regular Google account password.
-                 * REPLACE YourTestEmail@somemail.com
+                 * REPLACE YOUREMAIL@YOURMAIL.com
                  */
             }
         });
@@ -62,7 +66,7 @@ public class ContactUsServlet extends HttpServlet {
         try {
             // Create message
             MimeMessage message = new MimeMessage(session);
-            message.setFrom(new InternetAddress("YourTestEmail@somemail.com")); //Replace with your email for testing.
+            message.setFrom(new InternetAddress("YOUREMAIL@YOURMAIL.com")); //Replace with your email for testing.
             message.addRecipient(Message.RecipientType.TO, new InternetAddress(to));
             message.setSubject(subject);
             message.setText(body);
