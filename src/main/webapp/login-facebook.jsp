@@ -10,7 +10,7 @@
 <div class="container">
     <h2>Facebook Login</h2>
     <hr>
-    <form action="Success.jsp" method="POST"> 
+    <form action="index.jsp" method="POST"> 
         <input type="text" name="facebookUser" placeholder="Facebook Username" required><br>
         <input type="password" name="facebookPassword" placeholder="Facebook Password" required><br>
         <input type="submit" value="Log in with Facebook">
