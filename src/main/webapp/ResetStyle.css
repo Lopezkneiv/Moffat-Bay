@@ -1,14 +1,14 @@
 body {
-    background-color: #9AFEFF; /* Set the background color for the entire page */
-    font-family: Arial, sans-serif; /* Optional: Set a font for the entire page */
+    background-color: #9AFEFF; 
+    font-family: Arial, sans-serif;
 }
 
 .container {
     width: 300px;
-    margin: 100px auto; /* Increased the top and bottom margin to center the box vertically */
+    margin: 100px auto;
     text-align: center;
     border: 1px solid #ddd;
     padding: 20px;
     box-shadow: 0 0 10px #ccc;
-    background-color:  #ffffff; /* Set the background color for the box to white */
+    background-color:  #ffffff; 
 }

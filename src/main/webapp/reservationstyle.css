@@ -1,0 +1,89 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #9AFEFF; 
+}
+.error-message {
+    color: red;
+    font-weight: bold;
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid red;
+    background-color: #ffdcdc;
+}
+
+.header {
+    background-color: #9AFEFF;
+    color: white;
+    text-align: center;
+    padding: 1em;
+}
+
+.main-content {
+    display: flex;
+    justify-content: space-around; 
+    padding: 20px;
+    margin-top: 20px;
+}
+
+#reservationForm {
+    width: 80%; /* Increased width */
+    max-width: 800px; /* Optional: You can also set a max-width */
+    margin: 0 auto; /* Centers the form in the page */
+    padding: 40px; /* Increased padding */
+    background-color: #ffffff; /* White background, adjust if needed */
+    border: 1px solid #ccc; /* Border to match design */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Optional: Adds shadow for depth */
+}
+
+#reservationForm h2 {
+    font-size: 32px; /* Increased size for h2 elements */
+    color: #333; /* Dark grey color, adjust as needed */
+    margin-bottom: 20px; /* Space below the header */
+}
+
+#reservationForm label {
+    display: block; /* Ensures each input is on a new line */
+    margin-bottom: 10px;
+    font-size: 18px; /* Larger font size for labels */
+}
+
+#reservationForm input[type="date"],
+#reservationForm input[type="radio"],
+#reservationForm button {
+    font-size: 18px; /* Larger font size for inputs and buttons */
+    padding: 10px; /* Padding for larger clickable area */
+}
+
+#reservationForm input[type="date"] {
+    width: 100%; /* Makes date inputs full width */
+    margin-bottom: 20px; /* Space below each input */
+}
+
+#reservationForm .booking-options {
+    margin: 20px 0;
+}
+
+#reservationForm .booking-options label {
+    font-weight: normal; /* Adjust as needed */
+    margin-right: 10px;
+}
+
+#reservationForm .booking-options input {
+    margin-right: 5px;
+}
+
+#reservationForm button[type="submit"] {
+    background-color: #4CAF50; /* Green background, adjust as needed */
+    color: white; /* White text for better readability */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Changes mouse cursor to indicate clickable */
+    transition: background-color 0.3s; /* Smooth background color change on hover */
+}
+
+#reservationForm button[type="submit"]:hover {
+    background-color: #45a049; /* Darker green on hover for interactive feedback */
+}

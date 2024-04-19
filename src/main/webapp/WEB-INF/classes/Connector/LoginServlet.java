@@ -1,3 +1,4 @@
+// Robert Villarreal Silver Team
 package Connector;
 
 import javax.servlet.ServletException;
@@ -19,42 +20,42 @@ public class LoginServlet extends HttpServlet {
         String dbUsername = "team";
         String dbPassword = "silver";
 
-        try (Connection conn = DriverManager.getConnection(url, dbUsername, dbPassword);
-             PreparedStatement stmtUserCheck = conn.prepareStatement("SELECT * FROM Users WHERE Email_address = ?")) {
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");  // Ensure the driver is registered
+            Connection conn = DriverManager.getConnection(url, dbUsername, dbPassword);
+            PreparedStatement stmtUserCheck = conn.prepareStatement("SELECT * FROM Users WHERE Email_address = ?");
             
             stmtUserCheck.setString(1, email);
             ResultSet rsUserCheck = stmtUserCheck.executeQuery();
             
             if (rsUserCheck.next()) {
-                // Email exists, now check password
-                String storedPassword = rsUserCheck.getString("Password"); // Assuming 'Password' is the name of your column
+                String storedPassword = rsUserCheck.getString("Password");  // Adjusted to handle possible hash
                 
-                if (storedPassword.equals(password)) {
-                    // Login success: set session or cookie as needed
+                if (storedPassword.equals(password)) {  // Consider password hashing check here
                     HttpSession session = request.getSession();
                     session.setAttribute("user", email);
                     
                     if (rememberMe) {
                         Cookie c = new Cookie("userEmail", email);
                         c.setMaxAge(60 * 60 * 24 * 14); // 14 days
+                        c.setHttpOnly(true);  // Important: Mitigate XSS attack vector
+                        c.setSecure(true);    // Ensure the cookie is only sent over HTTPS
                         response.addCookie(c);
                     }
 
-                    // Redirect to user's home page or dashboard
                     response.sendRedirect("index.jsp");
                 } else {
-                    // Correct email but wrong password
-                    request.setAttribute("loginError", "The email entered does not exist or the password is incorrect");
-                    request.getRequestDispatcher("Login.jsp").forward(request, response);
+                    request.setAttribute("loginError", "Invalid password.");
+                    request.getRequestDispatcher("login.jsp").forward(request, response);
                 }
             } else {
-                // Email does not exist
-                request.setAttribute("loginError", "The email entered does not exist or the password is incorrect");
-                request.getRequestDispatcher("Login.jsp").forward(request, response);
+                request.setAttribute("loginError", "Email address not found.");
+                request.getRequestDispatcher("login.jsp").forward(request, response);
             }
-        } catch (SQLException e) {
+        } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
-            response.getWriter().println("Database connection problem.");
+            request.setAttribute("loginError", "Database connection problem.");
+            request.getRequestDispatcher("login.jsp").forward(request, response);
         }
     }
 }

@@ -1,0 +1,99 @@
+/* General page styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #9AFEFF; 
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin: 20px 0; 
+}
+h2 {
+    text-align: center;
+    color: #333;
+    margin: 20px 0; 
+}
+fieldset {
+    border: 1px solid #333; /* Thinner border for a sleek look */
+    padding: 10px; /* Compact padding */
+    margin: 10px auto; /* Uniform margin for top and bottom */
+    max-width: 600px; /* Max width to control fieldset size on larger screens */
+    border-radius: 5px; /* Rounded corners */
+    background-color: #ffffff; /* White background for the form areas */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+}
+
+legend {
+    font-size: 1.2em; /* Slightly larger font size for section titles */
+    font-weight: bold; /* Bold font weight for clarity */
+    color: #205072; /* Dark blue for contrast */
+    padding: 2px 5px; /* Padding to improve legibility */
+}
+
+#general-booking-details {
+    border: 1.5px solid #205072; /* Slightly thicker and colored border for emphasis */
+    padding: 15px; /* More padding for the general details section */
+    margin-bottom: 20px; /* Extra bottom margin to separate from submit button */
+}
+
+label {
+    display: block; /* Ensures label and field alignment */
+    margin: 8px 0; /* Spacing between form elements */
+    color: #333; /* Text color for readability */
+    font-size: 16px; /* Readable font size */
+}
+
+input[type="date"], 
+select {
+    width: 25%; /* Full width for easier touch interaction */
+    padding: 8px; /* Padding for comfort */
+    border: 1px solid #ccc; /* Subtle border */
+    border-radius: 4px; /* Rounded edges */
+}
+
+input[type="submit"] {
+    background-color: #4CAF50; /* Green background */
+    color: white; /* White text */
+    border: none; /* No border */
+    cursor: pointer; /* Indicates clickable */
+    padding: 15px 30px; /* Increased padding for a bigger button */
+    font-size: 32px; /* Larger font size for better readability */
+    border-radius: 8px; /* Slightly larger rounded corners */
+    width: auto; /* Adjust width as needed, or set a specific width */
+    height: auto; /* Adjust height as needed, or set a specific height */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Adds shadow for depth */
+    transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transitions for interactions */
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049; /* Darker shade on hover for interaction feedback */
+}
+
+@media (max-width: 768px) {
+    fieldset {
+        padding: 8px; /* Reduced padding on smaller screens */
+        margin: 10px; /* Reduced margin */
+    }
+
+    legend {
+        font-size: 1.1em; /* Smaller font size for small screens */
+    }
+}
+.button-container {
+    display: flex;
+    justify-content: center; /* Centers the button horizontally */
+    margin-top: 20px; /* Add margin as needed */
+}
+.button-container {
+    text-align: center; /* Centers the content inside the div */
+    margin-top: 20px; /* Add margin as needed */
+}
+
+.date-info p {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}

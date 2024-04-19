@@ -1,0 +1,122 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #9AFEFF;
+    margin: 0;
+    padding: 0; 
+}
+
+.pricing-wrapper {
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto; 
+    padding-top: 20px; 
+}
+
+.pricing-header {
+    margin: 0;
+    padding: 0; 
+}
+
+.pricing-header h1 {
+    color: #333;
+    margin: 0; 
+    padding: 20px 0; 
+    text-align: center;
+}
+
+.pricing-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px auto; 
+}
+
+.pricing-card {
+    width: 30%;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin: 10px;
+}
+
+.card-header {
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #eee;
+}
+
+.card-header h2 {
+    margin: 0;
+}
+
+.basic .card-header {
+    color: #E74C3C;
+}
+
+.standard .card-header {
+    color: #F39C12;
+}
+
+.premium .card-header {
+    color: #8E44AD;
+}
+
+.plan-type {
+    background: #fff;
+    color: #555;
+    font-weight: bold;
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 10px;
+    border: 2px solid currentColor;
+}
+
+.features-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+}
+
+.features-list li {
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.choose-button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    background-color: #27ae60;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+@media (max-width: 960px) {
+    .pricing-container {
+        flex-direction: column;
+    }
+
+    .pricing-card {
+        width: auto; 
+        margin: 10px 0;
+    }
+}
+.choose-button-link {
+    text-decoration: none; 
+    color: white; 
+    display: block; 
+}
+
+.choose-button {
+
+    border: none; 
+}
+
+.choose-button:hover, .choose-button-link:hover {
+    background-color: #2ecc71; 
+}
