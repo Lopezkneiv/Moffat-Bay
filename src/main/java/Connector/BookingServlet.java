@@ -6,6 +6,8 @@ import javax.servlet.ServletException;
 import javax.servlet.http.*;
 import java.io.IOException;
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @SuppressWarnings("serial")
 @WebServlet("/BookingServlet")
@@ -29,6 +31,15 @@ public class BookingServlet extends HttpServlet {
 
             // Store reservation ID in session
             request.getSession().setAttribute("reservationId", reservationId);
+            
+         // Store reservation ID and booking details in session
+            HttpSession session = request.getSession();
+            session.setAttribute("reservationId", reservationId);
+            session.setAttribute("number_of_rooms", request.getParameter("number_of_rooms"));
+            session.setAttribute("number_of_beds", request.getParameter("number_of_beds"));
+            session.setAttribute("number_of_adults", request.getParameter("number_of_adults"));
+            session.setAttribute("number_of_children", request.getParameter("number_of_children"));
+
 
             // Redirect or forward to a confirmation page
             response.sendRedirect("Success.jsp"); // Adjust according to your needs
@@ -85,20 +96,33 @@ public class BookingServlet extends HttpServlet {
     private void insertActivityDetails(HttpServletRequest request, Connection conn) throws SQLException {
         String[] activities = {"Snorkeling", "Parasailing", "Aquarium", "Dinner and Show", "Spa", "Couples Massage"};
         String sqlInsertActivity = "INSERT INTO activity_booking_details (activity_name, activity_date, activity_time, number_of_adults, number_of_children) VALUES (?, ?, ?, ?, ?)";
+        List<String> bookedActivities = new ArrayList<>();
+
         try (PreparedStatement pstmt = conn.prepareStatement(sqlInsertActivity)) {
             for (String activity : activities) {
                 String skipActivity = request.getParameter(activity + "_skip");
                 if ("true".equals(skipActivity)) {
                     continue; // Skip this activity if the "Do Not Book" checkbox is checked
                 }
+                String activityDate = request.getParameter(activity + "_date");
+                String activityTime = request.getParameter(activity + "_time") + ":00";
+                int adults = Integer.parseInt(request.getParameter(activity + "_adults"));
+                int children = Integer.parseInt(request.getParameter(activity + "_children"));
+
                 pstmt.setString(1, activity);
-                pstmt.setDate(2, Date.valueOf(request.getParameter(activity + "_date")));
-                pstmt.setTime(3, Time.valueOf(request.getParameter(activity + "_time") + ":00"));
-                pstmt.setInt(4, Integer.parseInt(request.getParameter(activity + "_adults")));
-                pstmt.setInt(5, Integer.parseInt(request.getParameter(activity + "_children")));
+                pstmt.setDate(2, Date.valueOf(activityDate));
+                pstmt.setTime(3, Time.valueOf(activityTime));
+                pstmt.setInt(4, adults);
+                pstmt.setInt(5, children);
                 pstmt.executeUpdate();
+
+                // Save for session
+                bookedActivities.add(activity + " on " + activityDate + " at " + activityTime + ", Adults: " + adults + ", Children: " + children);
             }
         }
-    }
-}
 
+        // Store the list of booked activities in the session
+        HttpSession session = request.getSession();
+        session.setAttribute("bookedActivities", bookedActivities);
+    }
+    }
