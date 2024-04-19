@@ -1,0 +1,71 @@
+body {
+    background-color: #9AFEFF;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0 90px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.reservation-section {
+    width: 100%;
+    text-align: center;
+}
+
+.room-options {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.room-option {
+    width: 30%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Retain this to help push the button down */
+    height: auto; /* Remove fixed height to allow content to define the height */
+    margin-bottom: 20px; /* Ensure there's space between rows when wrapping */
+}
+
+.room-option img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 10px; /* Ensure spacing between image and text */
+}
+
+.room-option h2 {
+    color: #333;
+}
+
+.room-option p {
+    text-align: left;
+    margin-bottom: 20px; /* Increase bottom margin to ensure space above the button */
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: auto; /* Ensures it stays at the bottom */
+    align-self: center; /* Center the button within the flex container */
+}
+
+@media (max-width: 768px) {
+    .room-options {
+        flex-direction: column;
+    }
+
+    .room-option {
+        width: 100%;
+    }
+}
