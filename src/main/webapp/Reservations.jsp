@@ -27,7 +27,9 @@
                 The climate control system allows you to adjust the room's temperature to your comfort level.
                 Step into the luxurious master bathroom, outfitted with high-end toiletries, fluffy towels, 
                 and a large walk-in shower, providing a spa-like experience right in your room.</p>
-                <button type="button">Book Now</button>
+                <a href="Reservation.jsp" class="choose-button-link">
+                    <button class="choose-button" type="button">Book Now</button>
+                </a>
             </div>
             <div class="room-option">
                 <img src="pictures/DeluxeRoom.jpg" alt="Deluxe Room">
@@ -45,7 +47,9 @@
                 the living area offers a plush sofa and a flat-screen TV, 
                 ideal for movie nights or unwinding after a day of exploring. 
                 The entire space is adorned with stylish decor that enhances the room's modern yet homey feel.</p>
-                <button type="button">Book Now</button>
+                <a href="Reservation.jsp" class="choose-button-link">
+                    <button class="choose-button" type="button">Book Now</button>
+                </a>
             </div>
             <div class="room-option">
                 <img src="pictures/SuiteRoom.jpg" alt="Suite Room">
@@ -62,7 +66,9 @@
                 for romantic dinners, complemented by the suite’s full kitchen equipped with modern appliances, 
                 including a full-size refrigerator, stove, and all the necessary utensils to prepare gourmet meals. 
                 An additional full bathroom ensures convenience and privacy for both guests, featuring premium toiletries and luxurious towels.</p>
-                <button type="button">Book Now</button>
+                <a href="Reservation.jsp" class="choose-button-link">
+                    <button class="choose-button" type="button">Book Now</button>
+                </a>
             </div>
         </div>
     </div>
