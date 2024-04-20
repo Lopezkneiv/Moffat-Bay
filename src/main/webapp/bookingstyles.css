@@ -16,10 +16,12 @@ h2 {
     color: #333;
     margin: 20px 0; 
 }
+
 fieldset {
+    position: relative; /* Required for absolute positioning of the legend */
     border: 1px solid #333; /* Thinner border for a sleek look */
-    padding: 10px; /* Compact padding */
-    margin: 10px auto; /* Uniform margin for top and bottom */
+    padding: 20px; /* Adjusted padding to provide space for the legend */
+    margin: 30px auto 10px; /* Top margin increased to accommodate legend */
     max-width: 600px; /* Max width to control fieldset size on larger screens */
     border-radius: 5px; /* Rounded corners */
     background-color: #ffffff; /* White background for the form areas */
@@ -30,7 +32,14 @@ legend {
     font-size: 1.2em; /* Slightly larger font size for section titles */
     font-weight: bold; /* Bold font weight for clarity */
     color: #205072; /* Dark blue for contrast */
-    padding: 2px 5px; /* Padding to improve legibility */
+    padding: 5px 10px; /* Slightly increased padding for better visibility */
+    background-color: #ffffff; /* White background to match fieldset */
+    position: absolute; /* Absolute positioning relative to its parent fieldset */
+    top: -14px; /* Position it half outside the top of the fieldset */
+    left: 50%; /* Start from the center of the fieldset */
+    transform: translateX(-50%); /* Center exactly above the fieldset */
+    border-radius: 5px; /* Rounded corners for consistency */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2); /* More pronounced shadow for floating effect */
 }
 
 #general-booking-details {
