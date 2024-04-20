@@ -9,4 +9,13 @@
     <welcome-file>default.jsp</welcome-file>
     <welcome-file>default.htm</welcome-file>
   </welcome-file-list>
+    <servlet>
+        <servlet-name>ReservationServlet</servlet-name>
+        <servlet-class>com.moffatbay.ReservationServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ReservationServlet</servlet-name>
+        <url-pattern>/bookReservation</url-pattern>
+    </servlet-mapping>
 </web-app>
