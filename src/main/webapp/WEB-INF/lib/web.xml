@@ -9,6 +9,17 @@
     <welcome-file>default.jsp</welcome-file>
     <welcome-file>default.htm</welcome-file>
   </welcome-file-list>
+<<<<<<< HEAD:src/main/webapp/WEB-INF/lib/web.xml
+    <servlet>
+        <servlet-name>ReservationServlet</servlet-name>
+        <servlet-class>com.moffatbay.ReservationServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ReservationServlet</servlet-name>
+        <url-pattern>/bookReservation</url-pattern>
+    </servlet-mapping>
+=======
   
   <!-- JSTL configuration -->
     <listener>
@@ -21,4 +32,5 @@
             <taglib-location>/WEB-INF/lib/jstl-impl-1.2.jar</taglib-location>
         </taglib>
     </jsp-config>
+>>>>>>> d14dae3c177832e2e84298b78510261ab734a90d:src/main/webapp/WEB-INF/web.xml
 </web-app>
