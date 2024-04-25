@@ -1,6 +1,5 @@
 <!-- Robert Villarreal Silver Team -->
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ include file="Header.jsp" %>
 <html>
 <head>
     <title>Password Reset</title>

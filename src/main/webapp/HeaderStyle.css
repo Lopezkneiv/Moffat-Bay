@@ -1,31 +1,45 @@
-header nav {
-    background-color: #9AFEFF; 
-    padding: 10px 0; /* Add some padding for vertical spacing */
+/* CSS UPDATED: 04/25/2024 By Trevor Michaels */
+
+header {
+    background-color: #005b96; /* Consistent with the page's header color */
+    color: white;
+    width: 100%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+nav {
+    display: flex;
+    justify-content: center; /* Center navigation items within the nav */
+    padding: 15px 0; /* Increased padding for better vertical spacing */
 }
 
 .navigation {
     list-style-type: none;
     padding: 0;
-    margin: 0 auto; /* Center the navigation menu */
+    margin: 0;
     display: flex;
-    justify-content: left; /* items horizontally */
+    align-items: center; /* Center items vertically */
+    gap: 20px; /* Use gap to evenly space items, replacing margin-right */
 }
 
 .navigation li {
-    display: inline-block;
-    margin-right: 20px; /* Add some space between the navigation items */
-}
-
-.navigation li:last-child {
-    margin-right: 0; /* Remove margin for the last item */
+    padding: 10px 20px; /* Padding for clickable area expansion */
+    border-radius: 8px; /* Rounded corners for a modern look */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effects */
 }
 
 .navigation li a {
-    color: #003366; 
+    color: white; /* Text color for readability against dark background */
     text-decoration: none;
-    font-size: 16px; /* Adjust the font size as needed */
+    font-size: 18px; /* Slightly larger font size for better readability */
+    font-weight: 500; /* Medium font weight for clarity */
+}
+
+.navigation li:hover {
+    background-color: #004d40; /* Darker shade on hover for interaction feedback */
+    cursor: pointer;
 }
 
 .navigation li a:hover {
-    text-decoration: underline; 
+    text-decoration: none; /* Remove underline and use color change instead */
 }

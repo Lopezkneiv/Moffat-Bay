@@ -4,7 +4,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Moffat Bay Lodge</title>
-<link rel="stylesheet" type="text/css" href="HeaderStyle.css">
+<link rel="stylesheet" type="text/css" href="HeaderStyle.css"> 
 </head>
 <body>
 <header>

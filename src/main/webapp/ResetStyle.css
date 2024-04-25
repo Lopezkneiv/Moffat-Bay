@@ -1,14 +1,60 @@
+/* CSS UPDATED: 04/25/2024 By Trevor Michaels */
+
 body {
-    background-color: #9AFEFF; 
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    background-color: #e0f7fa; /* consistent color with website */
+    color: #333; /* Dark gray for better readability */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center; /* Centers container vertically */
+    justify-content: center; /* Centers container horizontally */
+    min-height: 100vh; /* Full viewport height */
 }
 
 .container {
-    width: 300px;
-    margin: 100px auto;
+    width: 100%;
+    max-width: 360px; /* Optimal width for form inputs */
+    margin: 20px; /* Reduced margin for a balanced look */
     text-align: center;
-    border: 1px solid #ddd;
-    padding: 20px;
-    box-shadow: 0 0 10px #ccc;
-    background-color:  #ffffff; 
+    border: none; 
+    padding: 30px; /* Ample padding for better spacing inside the container */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle, modern shadow for depth */
+    background-color: #ffffff; 
+    border-radius: 8px; /* Rounded corners for a softer look */
+}
+
+input[type="text"], input[type="password"], input[type="email"], input[type="submit"] {
+    width: 100%; /* Full width for better alignment */
+    padding: 10px; /* Comfortable padding for inputs */
+    margin-top: 10px; /* Space between inputs */
+    margin-bottom: 10px; /* Space below each input for clarity */
+    border: 1px solid #ccc; /* Subtle border color */
+    border-radius: 4px; 
+    box-sizing: border-box; /* Includes padding and border in width calculation */
+}
+
+input[type="submit"] {
+    background-color: #007bff; /* Vivid blue to draw attention to primary actions */
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    border: none; /* Removes default border for a cleaner look */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3; /* Darker blue on hover for interactive feedback */
+}
+
+a {
+    display: block; /* Block display for better control over positioning */
+    margin-top: 20px; /* Space above the link */
+    color: #007bff; /* Theme color for links */
+    text-decoration: none; /* Removes underline */
+    transition: color 0.3s; /* Smooth transition for hover effect */
+}
+
+a:hover {
+    color: #0056b3; /* Darker blue on hover for interactive feedback */
 }

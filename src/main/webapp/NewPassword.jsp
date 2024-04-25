@@ -3,7 +3,7 @@
 <html>
 <head>
     <title>Set New Password</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="ResetStyle.css"> 
 </head>
 <body>
 

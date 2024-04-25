@@ -1,103 +1,103 @@
 /* Created: 04/07/2024 By Keith Olsen */
 /* index.css - Style for Landing Page page */
+/* General Styles */
+/* CSS UPDATED: 04/25/2024 By Trevor Michaels */
+
 body {
-    background-color: #9AFEFF; /* Set the background color for the entire page */
-    font-family: Arial, sans-serif; /* Set a font for the entire page */
-    margin: 0; /* Reset default margin */
-    padding: 0 90px;
+    background-color: #e0f7fa; /* Lighter, softer blue for a more modern and inviting look */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Updated font for better readability */
+    margin: 0;
+    padding: 20px;
     display: flex;
-    flex-direction: column; /* Stack elements vertically */
-    align-items: center; /* Center elements horizontally */
+    flex-direction: column;
+    align-items: center;
 }
 
-/* Style for the parent container */
+header {
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+    background-color: #005b96; /* Darker shade for header */
+    color: white;
+    font-size: 1.5em;
+}
+
+.Logo img {
+    width: 120px; /* Slightly larger for better visibility */
+    margin: 0 auto; /* Center logo */
+}
+
+/* Main Content Styling */
 .container {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+    flex-direction: column; /* Change to column for better control on mobile */
+    align-items: center; /* Center align to match new column layout */
+    width: 100%;
+    max-width: 1200px; /* Max width for better handling on larger screens */
+    margin-top: 20px;
+    padding: 20px;
+    background: #ffffff; /* White background for content areas */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15); /* Subtle shadow for depth */
+    border-radius: 8px;
 }
 
-.lodge-description {
-    width: 60%;
+.lodge-description, .pictures-container, .buttons-container, .description-container, .map-container {
+    width: 100%; /* Full width for better responsiveness */
     margin-bottom: 20px;
-    align-self: flex-start; /* Align to the top */
 }
 
-/* Style for the logo container */
-.Logo {
-    display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    margin-bottom: 20px; /* Add some space below the logo */
-}
-
-/* Style for the logo image */
-.Logo img {
-    width: 100px; /* Set a specific width */
-    height: auto; /* Let the height adjust proportionally */
+.picture, .description-box, .map-container {
+    border-radius: 8px;
 }
 
 .pictures-container {
-    display: flex;
-    margin-bottom: 20px;
-    align-self: flex-start; /* Align to the top */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid for images */
+    gap: 10px;
 }
 
-/* Style for the picture container */
-.picture {
-    flex: 1;
-    margin-right: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 10px; /* rounded edges */
-    overflow: hidden; /* Ensure the rounded edges are visible */
-}
-
-/* Style for the image inside the container */
 .picture img {
-    width: 325px; /* Set a specific width */
-    height: 275px; /* Set a specific height */
+    width: 100%; /* Full width for better scaling */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px;
 }
 
-
-/* Style for the buttons container */
 .buttons-container {
-    width: 70%;
-    display: flex;
-    flex-direction: column;
-    margin: 10px
+    display: grid;
+    grid-template-columns: 1fr; /* One column grid layout for buttons */
+    gap: 10px;
 }
 
-/* Style for the description container */
-.description-container {
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin-right:10px;
-}
-
-/* Style for the description box */
-.description-box {
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 10px;
-    display: none;
-}
-
-/* Style for the description button */
 .description-button {
-    margin-bottom: 5px;
-    padding: 5px;
-    background-color: #ccc;
+    background-color: #00796b; /* More vibrant button color */
+    color: white; /* Text color change for better contrast */
+    padding: 12px; /* Larger padding for a more clickable area */
+    font-size: 16px; /* Larger font for readability */
     border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    width: 100%;
+    border-radius: 8px;
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
 }
 
-/* Style for the map container */
-.map-container {
-    width: 90%;
+.description-button:hover {
+    background-color: #004d40; /* Darker shade on hover for feedback */
+}
+
+.description-container {
+    background: #fafafa; /* Lighter background for descriptions */
+    padding: 15px; /* Increased padding for more space */
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 8px;
+}
+
+.map-container {
+    overflow: hidden; /* Improved handling of overflow for rounded corners */
+}
+
+footer {
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    background-color: #263238; /* Very dark blue-grey for footer */
+    color: white;
+    margin-top: 20px;
 }

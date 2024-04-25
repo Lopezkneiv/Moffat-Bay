@@ -1,8 +1,10 @@
+/* CSS UPDATED: 04/25/2024 By Trevor Michaels */
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #9AFEFF; 
+    background-color: #e0f7fa; /* Set the background color to match website */
 }
 .error-message {
     color: red;

@@ -1,7 +1,8 @@
 /* Created: 04/15/2024 By Keith Olsen */
 /* About.css - Style for About us page */
+/* CSS UPDATED: 04/25/2024 By Trevor Michaels */
 body {
-    background-color: #9AFEFF; /* Set the background color for the entire page */
+    background-color: #e0f7fa; /* New background cover for the entire page */
     font-family: Arial, sans-serif; /* Set a font for the entire page */
     margin: 0; /* Reset default margin */
     padding: 0 90px;
@@ -9,7 +10,7 @@ body {
 
 header {
     width: 100%; /* Ensure the header spans the full width */
-    background-color: #9AFEFF; 
+    background-color: #005b96; /* New header color to match all other pages */
     color: white; /* White text color for contrast */
     padding: 10px 0; /* Add some padding for vertical spacing */
     text-align: center; /* Center the text/links in the header */
