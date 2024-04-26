@@ -14,35 +14,32 @@ import java.util.List;
 public class BookingServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String url = "jdbc:mysql://localhost:3306/moffat_bay_lodge";
-        String dbUsername = "team";  
-        String dbPassword = "silver";  
+        String dbUsername = "team";
+        String dbPassword = "silver";
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection conn = DriverManager.getConnection(url, dbUsername, dbPassword);
-            // Check and create tables if they don't exist
-            checkAndCreateTables(conn);
+            try (Connection conn = DriverManager.getConnection(url, dbUsername, dbPassword)) {
+                // Check and create tables if they don't exist
+                checkAndCreateTables(conn);
 
-            // Insert general booking details and get reservation ID
-            int reservationId = insertGeneralBookingDetails(request, conn);
+                // Insert general booking details and get reservation ID
+                int reservationId = insertGeneralBookingDetails(request, conn);
 
-            // Insert activity details for each activity
-            insertActivityDetails(request, conn);
+                // Insert activity details for each activity, passing the reservationId
+                insertActivityDetails(request, conn, reservationId);
 
-            // Store reservation ID in session
-            request.getSession().setAttribute("reservationId", reservationId);
-            
-         // Store reservation ID and booking details in session
-            HttpSession session = request.getSession();
-            session.setAttribute("reservationId", reservationId);
-            session.setAttribute("number_of_rooms", request.getParameter("number_of_rooms"));
-            session.setAttribute("number_of_beds", request.getParameter("number_of_beds"));
-            session.setAttribute("number_of_adults", request.getParameter("number_of_adults"));
-            session.setAttribute("number_of_children", request.getParameter("number_of_children"));
+                // Store reservation ID in session
+                HttpSession session = request.getSession();
+                session.setAttribute("reservation_Id", reservationId);
+                session.setAttribute("number_of_rooms", request.getParameter("number_of_rooms"));
+                session.setAttribute("number_of_beds", request.getParameter("number_of_beds"));
+                session.setAttribute("number_of_adults", request.getParameter("number_of_adults"));
+                session.setAttribute("number_of_children", request.getParameter("number_of_children"));
 
-
-            // Redirect or forward to a confirmation page
-            response.sendRedirect("Success.jsp"); // Adjust according to your needs
+                // Redirect or forward to a confirmation page
+                response.sendRedirect("Success.jsp"); // Adjust according to your needs
+            }
         } catch (Exception e) {
             throw new ServletException("Error processing booking", e);
         }
@@ -65,7 +62,9 @@ public class BookingServlet extends HttpServlet {
                 "activity_date DATE NOT NULL," +
                 "activity_time TIME NOT NULL," +
                 "number_of_adults INT NOT NULL," +
-                "number_of_children INT NOT NULL)";
+                "number_of_children INT NOT NULL," +
+                "reservation_id INT NOT NULL," +
+                "FOREIGN KEY (reservation_id) REFERENCES general_booking_details(id))";
             stmt.execute(sqlCreateActivity);
         }
     }
@@ -85,7 +84,7 @@ public class BookingServlet extends HttpServlet {
             
             rs = pstmt.getGeneratedKeys();
             if (rs.next()) {
-                reservationId = rs.getInt(1); // Retrieve the first column as ID
+                reservationId = rs.getInt(1); // Retrieve the generated reservation ID
             }
         } finally {
             if (rs != null) rs.close();
@@ -93,17 +92,16 @@ public class BookingServlet extends HttpServlet {
         return reservationId;
     }
 
-    private void insertActivityDetails(HttpServletRequest request, Connection conn) throws SQLException {
+    private void insertActivityDetails(HttpServletRequest request, Connection conn, int reservationId) throws SQLException {
         String[] activities = {"Snorkeling", "Parasailing", "Aquarium", "Dinner and Show", "Spa", "Couples Massage"};
-        String sqlInsertActivity = "INSERT INTO activity_booking_details (activity_name, activity_date, activity_time, number_of_adults, number_of_children) VALUES (?, ?, ?, ?, ?)";
+        String sqlInsertActivity = "INSERT INTO activity_booking_details (activity_name, activity_date, activity_time, number_of_adults, number_of_children, reservation_id) VALUES (?, ?, ?, ?, ?, ?)";
         List<String> bookedActivities = new ArrayList<>();
 
         try (PreparedStatement pstmt = conn.prepareStatement(sqlInsertActivity)) {
             for (String activity : activities) {
                 String skipActivity = request.getParameter(activity + "_skip");
-                if ("true".equals(skipActivity)) {
-                    continue; // Skip this activity if the "Do Not Book" checkbox is checked
-                }
+                if ("true".equals(skipActivity)) continue; // Skip this activity if the checkbox is checked
+
                 String activityDate = request.getParameter(activity + "_date");
                 String activityTime = request.getParameter(activity + "_time") + ":00";
                 int adults = Integer.parseInt(request.getParameter(activity + "_adults"));
@@ -114,6 +112,7 @@ public class BookingServlet extends HttpServlet {
                 pstmt.setTime(3, Time.valueOf(activityTime));
                 pstmt.setInt(4, adults);
                 pstmt.setInt(5, children);
+                pstmt.setInt(6, reservationId); // Set the reservation_id for each activity
                 pstmt.executeUpdate();
 
                 // Save for session
@@ -125,4 +124,5 @@ public class BookingServlet extends HttpServlet {
         HttpSession session = request.getSession();
         session.setAttribute("bookedActivities", bookedActivities);
     }
-    }
+}
+

@@ -3,10 +3,7 @@ package Connector;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
+import javax.servlet.http.*;
 import java.io.IOException;
 import java.sql.*;
 import java.time.LocalDate;
@@ -21,79 +18,101 @@ public class ReservationServlet extends HttpServlet {
         String bookingType = request.getParameter("bookingType");
 
         HttpSession session = request.getSession();
-        String username = (String) session.getAttribute("user");  
+        String userEmail = null;
+
+        // Retrieve user email from cookie
+        Cookie[] cookies = request.getCookies();
+        if (cookies != null) {
+            for (Cookie cookie : cookies) {
+                if ("userEmail".equals(cookie.getName())) {
+                    userEmail = cookie.getValue();
+                    break;
+                }
+            }
+        }
+
+        if (userEmail == null) {
+            request.setAttribute("errorMessage", "You must be logged in to make a reservation.");
+            request.getRequestDispatcher("login.jsp").forward(request, response);
+            return;
+        }
+
+        // Load MySQL JDBC driver
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+        } catch (ClassNotFoundException e) {
+            throw new ServletException("MySQL JDBC driver not found.", e);
+        }
 
         String url = "jdbc:mysql://localhost:3306/moffat_bay_lodge";
         String dbUsername = "team";
         String dbPassword = "silver";
-        
+
         try (Connection connection = DriverManager.getConnection(url, dbUsername, dbPassword)) {
-            DatabaseMetaData dbm = (DatabaseMetaData) connection.getMetaData();
-            ResultSet tables = dbm.getTables(null, null, "reservations", null);
-            if (!tables.next()) {
-                try (Statement statement = connection.createStatement()) {
-                    String sqlCreate = "CREATE TABLE reservations (" +
-                            "id INT PRIMARY KEY AUTO_INCREMENT," +
-                            "start_date DATE NOT NULL," +
-                            "end_date DATE NOT NULL," +
-                            "booking_type VARCHAR(10) NOT NULL)";
-                    statement.executeUpdate(sqlCreate);
-                }
+            String username = fetchUsernameFromEmail(connection, userEmail);
+            if (username == null) {
+                request.setAttribute("errorMessage", "User not found. Please log in again.");
+                request.getRequestDispatcher("login.jsp").forward(request, response);
+                return;
             }
 
             LocalDate start = LocalDate.parse(startDate);
             LocalDate end = LocalDate.parse(endDate);
             long daysBetween = ChronoUnit.DAYS.between(start, end);
-            boolean isValidRange = true;  
+            boolean isValidRange = true;
 
             switch (bookingType) {
                 case "daily":
-                    // For daily bookings, any duration of at least one day is valid.
-                    if (daysBetween < 1) {
-                        isValidRange = false;
-                    }
+                    if (daysBetween < 1) isValidRange = false;
                     break;
                 case "weekly":
-                    // For weekly bookings, the duration must be at least 7 days.
-                    if (daysBetween < 7) {
-                        isValidRange = false;
-                    }
+                    if (daysBetween < 7) isValidRange = false;
                     break;
                 case "monthly":
-                    // For monthly bookings, the duration must be at least 30 days.
-                    if (daysBetween < 30) {
-                        isValidRange = false;
-                    }
+                    if (daysBetween < 30) isValidRange = false;
                     break;
                 default:
-                    // Any unsupported booking type is considered invalid.
                     isValidRange = false;
                     break;
             }
 
             if (!isValidRange) {
-                // If the date range is not valid, set an error message in the request and forward back to the form page.
                 request.setAttribute("errorMessage", "Invalid date range for the selected booking option.");
                 request.getRequestDispatcher("Reservation.jsp").forward(request, response);
                 return;
             }
+            // Store dates in session after validating the range but before making the database insert
+            session.setAttribute("checkInDate", startDate);
+            session.setAttribute("checkOutDate", endDate);
 
-            String sqlInsert = "INSERT INTO reservations (start_date, end_date, booking_type) VALUES (?, ?, ?)";
+            String sqlInsert = "INSERT INTO reservations (start_date, end_date, booking_type, Username) VALUES (?, ?, ?, ?)";
             try (PreparedStatement preparedStatement = connection.prepareStatement(sqlInsert)) {
                 preparedStatement.setDate(1, Date.valueOf(startDate));
                 preparedStatement.setDate(2, Date.valueOf(endDate));
                 preparedStatement.setString(3, bookingType);
+                preparedStatement.setString(4, username);
+                
                 preparedStatement.executeUpdate();
             }
-
-            session.setAttribute("checkInDate", startDate);
-            session.setAttribute("checkOutDate", endDate);
-            session.setAttribute("user", username);  
 
             response.sendRedirect("booking.jsp");
         } catch (SQLException e) {
             throw new ServletException("Database connection problem", e);
         }
     }
+
+    private String fetchUsernameFromEmail(Connection conn, String email) throws SQLException {
+        String sql = "SELECT Username FROM Users WHERE Email_address = ?";
+        try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmt.setString(1, email);
+            try (ResultSet rs = pstmt.executeQuery()) {
+                if (rs.next()) {
+                    return rs.getString("Username");
+                }
+            }
+        }
+        return null;
+    }
 }
+
 

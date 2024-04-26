@@ -1,0 +1,33 @@
+body {
+    background-color: #9AFEFF;
+}
+
+.image-link {
+    display: inline-block;
+    text-align: center;
+    margin: 20px;
+    vertical-align: top; 
+}
+
+.image-link a {
+    display: block;
+    text-decoration: none; /* Remove underline from links */
+    color: black; /* Set text color for links */
+}
+
+.image-link img {
+    width: 600px; /* Adjust width as necessary */
+    height: 550px; /* Adjust height as necessary */
+    display: block; /* Makes sure the image is a block-level element, pushing the text below */
+    border: 1px solid #000; /* Optional border */
+}
+
+.image-link div {
+    margin-top: 5px; /* Space between the image and the text */
+}
+h1 {
+    font-size: 48px; /* Increase font size to make it bigger */
+    text-align: center; /* Center the heading */
+    margin-top: 20px; /* Add top margin if needed */
+    margin-bottom: 20px; /* Add bottom margin if needed */
+}
