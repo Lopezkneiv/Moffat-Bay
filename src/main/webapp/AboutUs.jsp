@@ -9,11 +9,6 @@
 <head>
     <title>About Us - Moffat Bay Lodge</title>
     <link rel="stylesheet" type="text/css" href="About.css">
-    <style>
-        #contact-form {
-            display: none;
-        }
-    </style>
 </head>
 <body>
     <div class="about-section">

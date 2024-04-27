@@ -1,5 +1,6 @@
 /* Created: 04/15/2024 By Keith Olsen */
 /* About.css - Style for About us page */
+/* Group Members: Nathan Le, Ivan Lopez-Kne, Trevor Michaels, Keith Olsen, Robert Villarreal*/
 /* CSS UPDATED: 04/25/2024 By Trevor Michaels */
 body {
     background-color: #e0f7fa; /* New background cover for the entire page */
@@ -67,6 +68,11 @@ header {
 }
 
 /*Contact us style*/
+
+#contact-form {
+	display: none;
+}
+
 .contact-section {
     text-align: center;
     margin-top: 50px;
