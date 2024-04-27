@@ -1,4 +1,5 @@
 /*Created By: Keith Olsen
+ * Group Members: Nathan Le, Ivan Lopez-Kne, Trevor Michaels, Keith Olsen, Robert Villarreal
  * Created On: 04/15/2024
  * Description: Servlet to handle emailing the contact us information.
 */

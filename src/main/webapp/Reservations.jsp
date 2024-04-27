@@ -1,6 +1,7 @@
 <%-- Created By: Trevor Michaels --%>
 <%-- Created On: 04/14/2024 --%>
 <%-- Description: JSP Reservation page for Moffat-Bay. --%>
+<%-- Silver Team: Nathan Le, Ivan Lopez-Kne, Trevor Michaels, Keith Olsen, Robert Villarreal --%>
 <%-- Modified: 04/18/2024 By Trevor Michaels, Added Reservation Page--%>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
