@@ -2,6 +2,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ include file="Header.jsp" %>
+<%@ page import="java.util.List" %>
+<%@ page import="java.util.ArrayList" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,20 +27,12 @@
         <p>Number of Children: <c:out value="${number_of_children}"/></p>
 
         <!-- Display activity bookings if available -->
-        <c:if test="${not empty bookedActivities}">
-            <h2>Booked Activities:</h2>
-            <ul>
-                <c:forEach var="activityDetail" items="${bookedActivities}">
-                    <li><c:out value="${activityDetail}"/></li>
-                </c:forEach>
-            </ul>
-        </c:if>
-
-        <!-- Error message if no reservation found -->
-        <c:if test="${not empty error}">
-            <p class="error">Error: <c:out value="${error}"/></p>
-        </c:if>
-
+        <h2>Booked Activities:</h2>
+        <ul>
+            <c:forEach var="activityDetail" items="${sessionScope.bookedActivities}">
+                <li><c:out value="${activityDetail}"/></li>
+            </c:forEach>
+        </ul>
         <a href="index.jsp">Return to Home</a>
     </div>
 </body>

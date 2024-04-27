@@ -1,6 +1,9 @@
 <!-- Robert Villarreal Silver Team -->
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page import="java.util.List" %>
+<%@ page import="java.util.ArrayList" %>
+
 <html>
 <head>
     <title>Booking Successful</title>
@@ -23,14 +26,12 @@
         <p>Number of Children: <c:out value="${sessionScope.number_of_children}"/></p>
 
         <!-- Display activity bookings -->
-        <h2>Booked Activities:</h2>
-        <ul>
-            <c:forEach var="activityDetail" items="${sessionScope.bookedActivities}">
-                <li><c:out value="${activityDetail}"/></li>
-            </c:forEach>
-        </ul>
-
-       
+<h2>Booked Activities:</h2>
+<ul>
+    <c:forEach var="activityDetail" items="${sessionScope.bookedActivities}">
+        <li><c:out value="${activityDetail}"/></li>
+    </c:forEach>
+</ul>
         <a href="index.jsp">Return to Home</a>
     </div>
 </body>

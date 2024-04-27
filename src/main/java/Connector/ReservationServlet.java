@@ -12,7 +12,9 @@ import java.time.temporal.ChronoUnit;
 @SuppressWarnings("serial")
 @WebServlet("/ReservationServlet")
 public class ReservationServlet extends HttpServlet {
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    private static final String reservation_id = null;
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String startDate = request.getParameter("checkInDate");
         String endDate = request.getParameter("checkOutDate");
         String bookingType = request.getParameter("bookingType");
@@ -85,12 +87,13 @@ public class ReservationServlet extends HttpServlet {
             session.setAttribute("checkInDate", startDate);
             session.setAttribute("checkOutDate", endDate);
 
-            String sqlInsert = "INSERT INTO reservations (start_date, end_date, booking_type, Username) VALUES (?, ?, ?, ?)";
+            String sqlInsert = "INSERT INTO reservations (reservation_id, start_date, end_date, booking_type, Username) VALUES (?, ?, ?, ?, ?)";
             try (PreparedStatement preparedStatement = connection.prepareStatement(sqlInsert)) {
-                preparedStatement.setDate(1, Date.valueOf(startDate));
-                preparedStatement.setDate(2, Date.valueOf(endDate));
-                preparedStatement.setString(3, bookingType);
-                preparedStatement.setString(4, username);
+                preparedStatement.setString(1, reservation_id);
+                preparedStatement.setDate(2, Date.valueOf(startDate));
+                preparedStatement.setDate(3, Date.valueOf(endDate));
+                preparedStatement.setString(4, bookingType);
+                preparedStatement.setString(5, username);
                 
                 preparedStatement.executeUpdate();
             }
