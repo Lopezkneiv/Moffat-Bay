@@ -117,7 +117,7 @@
     </div>
     
     <div class="contact-section">
-	    <h2>Contact Us</h2>
+	    <h2>We would love to hear form you today!</h2>
 	    <button id="contact-button">Contact Us</button>
 	    <form id="contact-form" action="ContactUsServlet" method="post">
 	        <div class="form-group">
@@ -145,14 +145,14 @@
 		// JavaScript to toggle the visibility of the contact form and scroll to it
 	    document.getElementById('contact-button').addEventListener('click', function() {
 	        var form = document.getElementById('contact-form');
-	        if (form.style.display === 'none') {
+	        if (form.style.display === 'block') {
+	            form.style.display = 'none';
+	        } else {
 	            form.style.display = 'block';
 	            // Scroll to the top of the form
 	            form.scrollIntoView({ behavior: 'smooth', block: 'start' });
-	        } else {
-	            form.style.display = 'none';
-        	}
-    	});
+	        }
+	    });
     </script>	
 </body>
 </html>
