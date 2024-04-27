@@ -9,6 +9,11 @@
 <head>
     <title>About Us - Moffat Bay Lodge</title>
     <link rel="stylesheet" type="text/css" href="About.css">
+    <style>
+        #contact-form {
+            display: none;
+        }
+    </style>
 </head>
 <body>
     <div class="about-section">
@@ -117,7 +122,8 @@
     
     <div class="contact-section">
 	    <h2>Contact Us</h2>
-	    <form action="ContactUsServlet" method="post">
+	    <button id="contact-button">Contact Us</button>
+	    <form id="contact-form" action="ContactUsServlet" method="post">
 	        <div class="form-group">
 	            <label for="name">Name:</label>
 	            <input type="text" id="name" name="name" required>
@@ -139,5 +145,18 @@
 	        </div>
 	    </form>
 	</div>
+	<script>
+		// JavaScript to toggle the visibility of the contact form and scroll to it
+	    document.getElementById('contact-button').addEventListener('click', function() {
+	        var form = document.getElementById('contact-form');
+	        if (form.style.display === 'none') {
+	            form.style.display = 'block';
+	            // Scroll to the top of the form
+	            form.scrollIntoView({ behavior: 'smooth', block: 'start' });
+	        } else {
+	            form.style.display = 'none';
+        	}
+    	});
+    </script>	
 </body>
 </html>
