@@ -1,6 +1,7 @@
 <%-- Created By: Keith Olsen --%>
 <%-- Created On: 04/14/2024 --%>
 <%-- Description: JSP About US page for Moffat-Bay. --%>
+<%-- Silver Team: Nathan Le, Ivan Lopez-Kne, Trevor Michaels, Keith Olsen, Robert Villarreal --%>
 <%-- Modified: 04/15/2024 By Keith Olsen, Added Contact Us section--%>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
