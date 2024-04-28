@@ -13,13 +13,13 @@ form {
     padding: 40px;
     border-radius: 15px; /* Smoother rounded corners for a softer appearance */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* More refined shadow for depth */
-    width: 320px; /* Slightly wider form for better text input visibility */
-    margin: 50px auto; /* Greater vertical margin for better centering */
+    width: 320px; 
+    margin: 50px auto; 
 }
 
 input[type="text"] {
     width: 100%;
-    padding: 12px; /* More padding for a better typing experience */
+    padding: 12px; 
     margin-top: 20px;
     border: 1px solid #ccc; /* Subtle border */
     border-radius: 4px; /* Consistently rounded corners for all inputs */
@@ -35,8 +35,8 @@ input[type="submit"] {
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    font-weight: bold; /* Bold font for button text */
-    transition: background-color 0.2s, box-shadow 0.2s; /* Smooth transitions for hover effects */
+    font-weight: bold; 
+    transition: background-color 0.2s, box-shadow 0.2s; 
 }
 
 input[type="submit"]:hover {
