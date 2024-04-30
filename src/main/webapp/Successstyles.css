@@ -1,7 +1,8 @@
 /* CSS UPDATED: 04/25/2024 By Trevor Michaels */
+/* Group Members: Nathan Le, Ivan Lopez-Kne, Trevor Michaels, Keith Olsen, Robert Villarreal*/
 
 .container {
-    background-color: #e0f7fa; /* Set the background color to match website */
+    background-color: #ffffff; 
     padding: 20px;
     border-radius: 8px; 
     box-shadow: 0 0 10px #aaa; 
@@ -10,7 +11,7 @@
 }
 body {
     font-family: Arial, sans-serif;
-    background: #9AFEFF;
+    background: #e0f7fa; /* Set the background color to match website */
     margin: 0;
     padding: 0;
 }

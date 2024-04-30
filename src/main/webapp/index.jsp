@@ -1,6 +1,7 @@
 <%-- Created By: Keith Olsen --%>
 <%-- Created On: 04/07/2024 --%>
 <%-- Description: JSP Landing page for Moffat-Bay Lodge site. --%>
+<%-- Silver Team: Nathan Le, Ivan Lopez-Kne, Trevor Michaels, Keith Olsen, Robert Villarreal --%>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ include file="Header.jsp" %>

@@ -1,6 +1,7 @@
 <%-- Created By: Keith Olsen --%>
 <%-- Created On: 04/14/2024 --%>
 <%-- Description: JSP About US page for Moffat-Bay. --%>
+<%-- Silver Team: Nathan Le, Ivan Lopez-Kne, Trevor Michaels, Keith Olsen, Robert Villarreal --%>
 <%-- Modified: 04/15/2024 By Keith Olsen, Added Contact Us section--%>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -116,8 +117,9 @@
     </div>
     
     <div class="contact-section">
-	    <h2>Contact Us</h2>
-	    <form action="ContactUsServlet" method="post">
+	    <h2>We would love to hear form you today!</h2>
+	    <button id="contact-button">Contact Us</button>
+	    <form id="contact-form" action="ContactUsServlet" method="post">
 	        <div class="form-group">
 	            <label for="name">Name:</label>
 	            <input type="text" id="name" name="name" required>
@@ -139,5 +141,18 @@
 	        </div>
 	    </form>
 	</div>
+	<script>
+		// JavaScript to toggle the visibility of the contact form and scroll to it
+	    document.getElementById('contact-button').addEventListener('click', function() {
+	        var form = document.getElementById('contact-form');
+	        if (form.style.display === 'block') {
+	            form.style.display = 'none';
+	        } else {
+	            form.style.display = 'block';
+	            // Scroll to the top of the form
+	            form.scrollIntoView({ behavior: 'smooth', block: 'start' });
+	        }
+	    });
+    </script>	
 </body>
 </html>

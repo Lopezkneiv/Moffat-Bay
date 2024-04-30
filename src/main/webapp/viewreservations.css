@@ -1,33 +1,56 @@
+/* CSS UPDATED: 04/27/2024 By Trevor Michaels */
 /* Robert Villarreal Silver Team */
+/* Group Members: Nathan Le, Ivan Lopez-Kne, Trevor Michaels, Keith Olsen, Robert Villarreal*/
 body {
-    background-color: #9AFEFF; /* Light blue background */
-    font-family: Arial, sans-serif; /* Sets a clean, readable font */
+    background-color: #e0f7fa; /* Consistent light blue background */
+    font-family: 'Segoe UI', Arial, sans-serif; /* Modern, clean font */
     margin: 0;
-    padding: 20px; /* Adds some spacing around the content */
+    padding: 20px;
 }
 
 form {
-    background-color: #FFFFFF; /* White background for the form */
-    padding: 80px;
-    border-radius: 8px; /* Rounded corners for the form */
-    box-shadow: 0 0 10px #AAAAAA; /* Adds a subtle shadow to the form */
-    width: 300px; /* Fixes the form width */
-    margin: auto; /* Centers the form horizontally */
-     margin-top: 200px; 
+    background-color: #ffffff; /* White background for the form */
+    padding: 40px;
+    border-radius: 15px; /* Smoother rounded corners for a softer appearance */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* More refined shadow for depth */
+    width: 320px; 
+    margin: 50px auto; 
 }
 
-input[type="text"], input[type="submit"] {
+input[type="text"] {
     width: 100%;
-    padding: 8px;
-    margin-top: 10px;
-    box-sizing: border-box; /* Includes padding and border in the element's total width and height */
+    padding: 12px; 
+    margin-top: 20px;
+    border: 1px solid #ccc; /* Subtle border */
+    border-radius: 4px; /* Consistently rounded corners for all inputs */
+    box-sizing: border-box;
+}
+
+input[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    margin-top: 20px;
+    background-color: #007bff; /* Bright blue for the submit button */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold; 
+    transition: background-color 0.2s, box-shadow 0.2s; 
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3; /* Darker blue on hover for interactive feedback */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Enhanced shadow for a 3D effect on hover */
 }
 
 .error {
-    color: #FF0000; /* Red color for error messages */
+    color: #d9534f; /* More toned-down red for error messages */
     font-weight: bold;
+    text-align: center; /* Ensures error messages are centered under the form */
+    margin-top: 20px; /* Space above the error message */
 }
 
 h1, p {
-    text-align: center; /* Centers the text */
+    text-align: center; /* Maintains centered text alignment */
 }
