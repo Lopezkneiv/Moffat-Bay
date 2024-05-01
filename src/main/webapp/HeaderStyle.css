@@ -10,8 +10,9 @@ header {
 
 nav {
     display: flex;
-    justify-content: center; /* Center navigation items within the nav */
-    padding: 15px 0; /* Increased padding for better vertical spacing */
+    justify-content: space-between; /* Adjusted to space-between for pushing content to the edges */
+    padding: 15px 20px; /* Increased padding for better vertical spacing */
+    align-items: center;
 }
 
 .navigation {
@@ -43,4 +44,19 @@ nav {
 
 .navigation li a:hover {
     text-decoration: none; /* Remove underline and use color change instead */
+}
+
+/* Specific styles for the Login button */
+.login a {
+    background-color: #f47521;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.login a:hover {
+    background-color: #e46320;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
