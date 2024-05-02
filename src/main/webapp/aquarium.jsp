@@ -2,7 +2,7 @@
 <%-- Created On: 05/01/2024 --%>
 <%-- Description: JSP Aquarium Attraction for Moffat-Bay Lodge. --%>
 <%-- Silver Team: Nathan Le, Ivan Lopez-Kne, Trevor Michaels, Keith Olsen, Robert Villarreal --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %> 
 <%@ include file="Header.jsp" %>
 <!DOCTYPE html>
 <html>
@@ -35,7 +35,7 @@
 	</div>
 	
 	<div>
-	    <img src="pictures/local_species.jpg" alt="Local Species">
+	    <img src="pictures/local_fish.jpg" alt="Local Species">
 	    <p>
 	        Local Species: Discover the fascinating aquatic life native to our region. Learn about the unique adaptations of local fish species, such as trout, bass, and catfish, and gain a deeper appreciation for the ecosystems that surround us.
 	    </p>
