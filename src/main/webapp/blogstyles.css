@@ -1,34 +1,47 @@
-/* Group Members: Nathan Le, Ivan Lopez-Kne, Trevor Michaels, Keith Olsen, Robert Villarreal*/
+/* Group Members: Nathan Le, Ivan Lopez-Kne, Trevor Michaels, Keith Olsen, Robert Villarreal */
+/* CSS UPDATED: 05/03/2024 By Trevor Michaels */
+
 body {
-    background-color: #9AFEFF;
+    font-family: 'Segoe UI', Arial, sans-serif; /* Using a clean, modern font */
+    background-color: #e0f7fa; /* Soft, light blue for a cleaner look */
+    color: #333; /* Dark gray for text for better readability */
+    margin: 0;
+    padding: 20px;
+    text-align: center; /* Aligns all text to the center */
+}
+
+h1 {
+    font-size: 32px; /* Appropriate font size for the title */
+    color: #005b96; /* Dark blue that matches the header color */
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .image-link {
-    display: inline-block;
-    text-align: center;
+    display: inline-block; /* Keeps the current inline layout */
     margin: 20px;
-    vertical-align: top; 
+    background-color: #ffffff; /* White background for each image link */
+    border-radius: 8px; /* Rounded corners for a softer look */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    width: 300px; /* Standardizes the width for all image links */
+    overflow: hidden; 
 }
 
 .image-link a {
-    display: block;
-    text-decoration: none; /* Remove underline from links */
-    color: black; /* Set text color for links */
+    text-decoration: none;
+    color: #005b96; 
+    padding: 10px; 
+    display: block; 
 }
 
 .image-link img {
-    width: 600px; /* Adjust width as necessary */
-    height: 550px; /* Adjust height as necessary */
-    display: block; /* Makes sure the image is a block-level element, pushing the text below */
-    border: 1px solid #000; /* Optional border */
+    width: 100%; /* Ensures the image fits the container */
+    height: auto; /* Maintains aspect ratio */
+    display: block;
 }
 
 .image-link div {
-    margin-top: 5px; /* Space between the image and the text */
-}
-h1 {
-    font-size: 48px; /* Increase font size to make it bigger */
-    text-align: center; /* Center the heading */
-    margin-top: 20px; /* Add top margin if needed */
-    margin-bottom: 20px; /* Add bottom margin if needed */
+    margin-top: 5px;
+    font-size: 14px; 
+    color: #666; 
 }
