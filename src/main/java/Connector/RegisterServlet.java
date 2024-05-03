@@ -2,6 +2,7 @@
 // Group Members: Nathan Le, Ivan Lopez-Kne, Trevor Michaels, Keith Olsen, Robert Villarreal
 package Connector;
 
+import org.mindrot.jbcrypt.BCrypt;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
@@ -24,6 +25,9 @@ public class RegisterServlet extends HttpServlet {
             request.getRequestDispatcher("RegistrationForm.jsp").forward(request, response);
             return;
         }
+
+        // Encrypt the password before storing it
+        String hashedPassword = BCrypt.hashpw(password, BCrypt.gensalt(12));
 
         String url = "jdbc:mysql://localhost:3306/moffat_bay_lodge";
         String dbUsername = "team";
@@ -48,7 +52,7 @@ public class RegisterServlet extends HttpServlet {
                 String query = "INSERT INTO Users (Username, Password, Email_address) VALUES (?, ?, ?)";
                 PreparedStatement stmt = conn.prepareStatement(query);
                 stmt.setString(1, username);
-                stmt.setString(2, password);  
+                stmt.setString(2, hashedPassword);  // Use hashed password
                 stmt.setString(3, email);
 
                 int rowsInserted = stmt.executeUpdate();

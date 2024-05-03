@@ -7,6 +7,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 import java.io.IOException;
 import java.sql.*;
+import org.mindrot.jbcrypt.BCrypt;
 
 @WebServlet("/LoginServlet")
 public class LoginServlet extends HttpServlet {
@@ -22,17 +23,17 @@ public class LoginServlet extends HttpServlet {
         String dbPassword = "silver";
 
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");  // Ensure the driver is registered
+            Class.forName("com.mysql.cj.jdbc.Driver");
             Connection conn = DriverManager.getConnection(url, dbUsername, dbPassword);
-            PreparedStatement stmtUserCheck = conn.prepareStatement("SELECT * FROM Users WHERE Email_address = ?");
+            PreparedStatement stmtUserCheck = conn.prepareStatement("SELECT Password FROM Users WHERE Email_address = ?");
             
             stmtUserCheck.setString(1, email);
             ResultSet rsUserCheck = stmtUserCheck.executeQuery();
             
             if (rsUserCheck.next()) {
-                String storedPassword = rsUserCheck.getString("Password");  // Adjusted to handle possible hash
+                String storedPassword = rsUserCheck.getString("Password");  // This is the hashed password from the database
                 
-                if (storedPassword.equals(password)) {  // Consider password hashing check here
+                if (BCrypt.checkpw(password, storedPassword)) {  // Use BCrypt to check the password
                     HttpSession session = request.getSession();
                     session.setAttribute("user", email);
                     
@@ -53,6 +54,9 @@ public class LoginServlet extends HttpServlet {
                 request.setAttribute("loginError", "Email address not found.");
                 request.getRequestDispatcher("login.jsp").forward(request, response);
             }
+            rsUserCheck.close();
+            stmtUserCheck.close();
+            conn.close();
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
             request.setAttribute("loginError", "Database connection problem.");
