@@ -32,7 +32,7 @@
         </a>
     </div>
     <div class="image-link">
-        <a href="dinner_show.jsp">
+        <a href="dinnerTheater.jsp">
             <img src="pictures/dinner_show.jpg" alt="Dinner and a Show">    
             Photo by Monica Silvestre <br>
             Dinner and a Show <br>
