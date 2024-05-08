@@ -57,6 +57,9 @@ public class RegisterServlet extends HttpServlet {
 
                 int rowsInserted = stmt.executeUpdate();
                 if (rowsInserted > 0) {
+                    HttpSession session = request.getSession();
+                    session.setAttribute("registrationSuccess", true);  // New session attribute
+
                     response.sendRedirect("Login.jsp");
                 } else {
                     request.setAttribute("registrationError", "A problem occurred during registration.");

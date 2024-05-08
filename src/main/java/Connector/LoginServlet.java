@@ -36,6 +36,7 @@ public class LoginServlet extends HttpServlet {
                 if (BCrypt.checkpw(password, storedPassword)) {  // Use BCrypt to check the password
                     HttpSession session = request.getSession();
                     session.setAttribute("user", email);
+                    session.setAttribute("loginSuccess", true); 
                     
                     if (rememberMe) {
                         Cookie c = new Cookie("userEmail", email);

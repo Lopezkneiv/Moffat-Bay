@@ -7,6 +7,13 @@
     <link rel="stylesheet" type="text/css" href="LoginStyle.css">
 </head>
 <body>
+    <%
+        Boolean registrationSuccess = (Boolean) session.getAttribute("registrationSuccess");
+        if (registrationSuccess != null && registrationSuccess) {
+            out.println("<p>You have successfully registered an account. Please log in.</p>");
+            session.removeAttribute("registrationSuccess");
+        }
+    %>
 
 <div class="container">
     <h2>Login</h2>

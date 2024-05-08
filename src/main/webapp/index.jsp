@@ -30,6 +30,13 @@
     </script>
 </head>
 <body>
+    <%
+        Boolean loginSuccess = (Boolean) session.getAttribute("loginSuccess");
+        if (loginSuccess != null && loginSuccess) {
+            out.println("<p>Login successful! Welcome, " + session.getAttribute("user") + ".</p>");
+            session.removeAttribute("loginSuccess");
+        }
+    %>
     <header>
         <h1>Welcome to Moffat Bay Lodge
             <div class="Logo">
