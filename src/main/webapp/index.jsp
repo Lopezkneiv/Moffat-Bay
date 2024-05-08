@@ -36,6 +36,11 @@
             out.println("<p>Login successful! Welcome, " + session.getAttribute("user") + ".</p>");
             session.removeAttribute("loginSuccess");
         }
+        Boolean registrationSuccess = (Boolean) session.getAttribute("registrationSuccess");
+        if (registrationSuccess != null && registrationSuccess) {
+            out.println("<p>You have successfully registered an account. You are logged in.</p>");
+            session.removeAttribute("registrationSuccess");
+        }
     %>
     <header>
         <h1>Welcome to Moffat Bay Lodge

