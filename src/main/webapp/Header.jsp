@@ -16,7 +16,7 @@
             <li><a href="Reservations.jsp">Reservations</a></li>
             <li><a href="AboutUs.jsp">About Us</a></li>
             <li><a href="Blog.jsp">Blog</a></li>
-            <li><a href="ViewReservations.jsp">Registration Lookup</a></li>
+            <li><a href="ViewReservations.jsp">Reservation Lookup</a></li>
         </ul>
         <div class="login">
         	<a href="Login.jsp">Login</a>
