@@ -43,11 +43,13 @@
         }
     %>
     <header>
-        <h1>Welcome to Moffat Bay Lodge
-            <div class="Logo">
-                <img src="pictures/SalishSalmon.png" alt="Logo_Salmon">
-            </div>
-        </h1>
+	    <div class="indexHeader">
+	        <h1>Welcome to Moffat Bay Lodge
+	            <div class="Logo">
+	                <img src="pictures/SalishSalmon.png" alt="Logo_Salmon">
+	            </div>
+	        </h1>
+        </div>
     </header>
 
 

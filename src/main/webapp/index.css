@@ -14,16 +14,16 @@ body {
     align-items: center;
 }
 
-header {
+.indexHeader {
     width: 100%;
     text-align: center;
-    padding: 20px 0;
-    background-color: #005b96; /* Darker shade for header */
+    padding: 5px 0;
+    background-color: #00796b; /* Darker shade for header */
     color: white;
 }
 
 .Logo img {
-    width: 120px; /* Slightly larger for better visibility */
+    width: 50px; 
     margin: 0 auto; /* Center logo */
 }
 
