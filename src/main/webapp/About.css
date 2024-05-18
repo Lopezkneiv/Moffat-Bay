@@ -28,8 +28,9 @@ header {
 }
 
 .about-icon img {
-    width: 300px; /* Set a specific width */
+    width: 400px; /* Set a specific width */
     height: auto; /* Set a specific height */
+    border-radius: 10px; /* rounded edges */
 }
 
 .about-description {

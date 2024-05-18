@@ -15,7 +15,7 @@
     <div class="about-section">
         <div class="about-icon">
             <!-- Icon taken from https://www.flaticon.com/free-icons/about-us -->
-            <img src="pictures/aboutUsIcon.png" alt="About Us Icon">
+            <img src="pictures/Family_Walk.jpg" alt="Family walking">
         </div>
         <div class="about-description">
         	<h1>Moffat Bay Lodge</h1>
